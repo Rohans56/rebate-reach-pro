@@ -38,7 +38,7 @@ serve(async (req) => {
     // Full address for Pylon
     const fullAddress = `${leadData.streetAddress}, ${leadData.suburb} ${leadData.postcode}`;
 
-    // Create lead in Pylon using their form endpoint
+    // Create lead in Pylon using their lead_form endpoint
     const pylonPayload = {
       contact: {
         first_name: firstName,
@@ -48,22 +48,25 @@ serve(async (req) => {
       },
       lead: {
         source_type: "website",
-        address: fullAddress,
       },
       opportunity: {
         title: `${firstName} ${lastName} - ${leadData.suburb}`,
         notes: leadData.message || "Website quote request",
-        address: fullAddress,
+        custom_property_values: {
+          "getpylon.com:address_single_line": fullAddress,
+        },
       },
     };
 
     console.log("Sending to Pylon:", { ...pylonPayload, contact: { ...pylonPayload.contact, email: "[redacted]" } });
 
-    const pylonResponse = await fetch("https://api.getpylon.com/v1/form/lead-opportunities", {
+    const pylonResponse = await fetch("https://api.getpylon.com/v1/lead_form", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${PYLON_API_KEY}`,
         "Content-Type": "application/json",
+        "Accept": "application/vnd.api+json",
+        "Prefer": "pylon-legacy-crm=sync",
       },
       body: JSON.stringify(pylonPayload),
     });
@@ -71,7 +74,7 @@ serve(async (req) => {
     if (!pylonResponse.ok) {
       const errorText = await pylonResponse.text();
       console.error("Pylon API error:", pylonResponse.status, errorText);
-      throw new Error(`Pylon API error: ${pylonResponse.status}`);
+      throw new Error(`Pylon API error: ${pylonResponse.status} - ${errorText}`);
     }
 
     const pylonResult = await pylonResponse.json();
