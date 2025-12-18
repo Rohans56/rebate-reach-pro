@@ -1,1 +1,4 @@
 project_id = "nlhawcsbzriaommlbety"
+
+[functions.analyze-nem12]
+verify_jwt = false
