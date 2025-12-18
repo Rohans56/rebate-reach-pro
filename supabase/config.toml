@@ -2,3 +2,6 @@ project_id = "nlhawcsbzriaommlbety"
 
 [functions.analyze-nem12]
 verify_jwt = false
+
+[functions.send-to-pylon]
+verify_jwt = false

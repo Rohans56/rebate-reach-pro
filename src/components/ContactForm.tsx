@@ -14,7 +14,9 @@ export const ContactForm = () => {
     name: "",
     email: "",
     phone: "",
+    streetAddress: "",
     suburb: "",
+    postcode: "",
     message: "",
   });
 
@@ -23,22 +25,43 @@ export const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
+      // Save to local database
       const { error } = await supabase.from("leads").insert({
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
+        street_address: formData.streetAddress,
         suburb: formData.suburb,
+        postcode: formData.postcode,
         message: formData.message || null,
       });
 
       if (error) throw error;
+
+      // Send to Pylon CRM
+      const pylonResponse = await supabase.functions.invoke("send-to-pylon", {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          streetAddress: formData.streetAddress,
+          suburb: formData.suburb,
+          postcode: formData.postcode,
+          message: formData.message,
+        },
+      });
+
+      if (pylonResponse.error) {
+        console.error("Pylon sync error:", pylonResponse.error);
+        // Don't fail the form submission if Pylon fails
+      }
 
       toast({
         title: "Quote Request Received!",
         description: "We'll contact you within 24 hours with your free quote.",
       });
       
-      setFormData({ name: "", email: "", phone: "", suburb: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", streetAddress: "", suburb: "", postcode: "", message: "" });
     } catch (error) {
       console.error("Error submitting lead:", error);
       toast({
@@ -144,18 +167,28 @@ export const ContactForm = () => {
                   />
                 </div>
               </div>
+              <div>
+                <label className="text-sm font-medium text-foreground mb-2 block">Email Address *</label>
+                <Input
+                  required
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  placeholder="john@example.com"
+                  className="h-12"
+                />
+              </div>
+              <div>
+                <label className="text-sm font-medium text-foreground mb-2 block">Street Address *</label>
+                <Input
+                  required
+                  value={formData.streetAddress}
+                  onChange={(e) => setFormData({ ...formData, streetAddress: e.target.value })}
+                  placeholder="123 Main Street"
+                  className="h-12"
+                />
+              </div>
               <div className="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">Email Address *</label>
-                  <Input
-                    required
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="john@example.com"
-                    className="h-12"
-                  />
-                </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">Suburb *</label>
                   <Input
@@ -164,6 +197,17 @@ export const ContactForm = () => {
                     onChange={(e) => setFormData({ ...formData, suburb: e.target.value })}
                     placeholder="e.g. Point Cook"
                     className="h-12"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-foreground mb-2 block">Postcode *</label>
+                  <Input
+                    required
+                    value={formData.postcode}
+                    onChange={(e) => setFormData({ ...formData, postcode: e.target.value })}
+                    placeholder="3030"
+                    className="h-12"
+                    maxLength={4}
                   />
                 </div>
               </div>
