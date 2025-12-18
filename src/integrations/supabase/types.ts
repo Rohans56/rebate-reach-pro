@@ -22,6 +22,8 @@ export type Database = {
           message: string | null
           name: string
           phone: string
+          postcode: string | null
+          street_address: string | null
           suburb: string
         }
         Insert: {
@@ -31,6 +33,8 @@ export type Database = {
           message?: string | null
           name: string
           phone: string
+          postcode?: string | null
+          street_address?: string | null
           suburb: string
         }
         Update: {
@@ -40,6 +44,8 @@ export type Database = {
           message?: string | null
           name?: string
           phone?: string
+          postcode?: string | null
+          street_address?: string | null
           suburb?: string
         }
         Relationships: []
