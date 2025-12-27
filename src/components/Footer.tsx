@@ -13,9 +13,9 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <img src={logo} alt="ADSA Solar" className="h-14 mb-4 brightness-0 invert" />
+            <img src={logo} alt="ADSA Solar" className="h-14 mb-4" />
             <p className="text-white/70 mb-6 leading-relaxed">
-              Melbourne's trusted solar and battery installation experts. Helping Victorians save thousands on electricity since 2014.
+              Your trusted solar and battery installation experts. Helping Australians save thousands on electricity.
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300">
@@ -64,7 +64,7 @@ export const Footer = () => {
                 </div>
                 <div>
                   <p className="text-sm text-white/60">Phone</p>
-                  <a href="tel:1300123456" className="font-semibold hover:text-primary transition-colors">1300 123 456</a>
+                  <a href="tel:0469312118" className="font-semibold hover:text-primary transition-colors">0469 312 118</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -73,7 +73,7 @@ export const Footer = () => {
                 </div>
                 <div>
                   <p className="text-sm text-white/60">Email</p>
-                  <a href="mailto:info@adsasolar.com.au" className="font-semibold hover:text-primary transition-colors">info@adsasolar.com.au</a>
+                  <a href="mailto:adsaaustraliansolar@gmail.com" className="font-semibold hover:text-primary transition-colors text-sm">adsaaustraliansolar@gmail.com</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -81,8 +81,8 @@ export const Footer = () => {
                   <MapPin className="w-5 h-5 text-secondary" />
                 </div>
                 <div>
-                  <p className="text-sm text-white/60">Service Area</p>
-                  <p className="font-semibold">Melbourne & All Victoria</p>
+                  <p className="text-sm text-white/60">Address</p>
+                  <p className="font-semibold">82 Yale Dr, Epping, 3076</p>
                 </div>
               </li>
             </ul>
