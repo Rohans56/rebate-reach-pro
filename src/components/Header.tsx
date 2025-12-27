@@ -65,9 +65,9 @@ export const Header = () => {
 
             {/* CTA Buttons */}
             <div className="hidden md:flex items-center gap-4">
-              <a href="tel:1300123456" className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
+              <a href="tel:0469312118" className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
                 <Phone className="w-4 h-4 text-primary" />
-                1300 123 456
+                0469 312 118
               </a>
               <Button variant="default" size="default" asChild>
                 <Link to="/contact">Get Free Quote</Link>
@@ -118,11 +118,11 @@ export const Header = () => {
               ))}
               <div className="mt-6 flex flex-col gap-3">
                 <a
-                  href="tel:1300123456"
+                  href="tel:0469312118"
                   className="flex items-center justify-center gap-2 py-4 text-lg font-medium text-primary"
                 >
                   <Phone className="w-5 h-5" />
-                  1300 123 456
+                  0469 312 118
                 </a>
                 <Button variant="default" size="lg" className="w-full" asChild>
                   <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Get Your Free Quote</Link>
