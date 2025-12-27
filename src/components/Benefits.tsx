@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Sun, Battery, DollarSign, Shield, Clock, Award, Leaf, TrendingUp, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const benefits = [
   {
@@ -139,13 +140,13 @@ export const Benefits = () => {
               The Victorian solar rebate and Federal battery subsidy decrease annually. Lock in maximum savings by acting now. 
               Maximum rebate cap up to $18,500 per eligible household.
             </p>
-            <a
-              href="#calculator"
+            <Link
+              to="/services"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-solar-teal font-semibold rounded-xl hover:bg-white/90 transition-colors group"
             >
               Calculate Your Savings Now
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

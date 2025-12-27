@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/adsa-logo.png";
 
 export const Footer = () => {
@@ -33,11 +34,11 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-bold mb-4">Our Services</h4>
             <ul className="space-y-3 text-white/70">
-              <li><a href="#benefits" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Solar Panel Installation <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></a></li>
-              <li><a href="#batteries" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Battery Storage Systems <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></a></li>
-              <li><a href="#calculator" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Solar + Battery Packages <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></a></li>
-              <li><a href="#contact" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Rebate Assistance <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></a></li>
-              <li><a href="#contact" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Commercial Solar <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></a></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Solar Panel Installation <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Battery Storage Systems <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Solar + Battery Packages <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Rebate Assistance <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Commercial Solar <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
             </ul>
           </div>
 
@@ -45,9 +46,9 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-bold mb-4">Resources</h4>
             <ul className="space-y-3 text-white/70">
-              <li><a href="#calculator" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Savings Calculator <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></a></li>
-              <li><a href="#faq" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">FAQ <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></a></li>
-              <li><a href="#projects" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Our Work <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></a></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Savings Calculator <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">FAQ <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
+              <li><Link to="/projects" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Our Work <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
               <li><a href="#" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Blog <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></a></li>
               <li><a href="#" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Solar Rebate Guide <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></a></li>
             </ul>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sun, Zap, DollarSign, Award, CheckCircle, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import adsaLogo from "@/assets/adsa-logo.png";
 
@@ -113,16 +114,16 @@ export const Hero = () => {
               className="flex flex-col sm:flex-row gap-4 mb-12"
             >
               <Button variant="default" size="xl" asChild>
-                <a href="#calculator" className="group">
+                <Link to="/services" className="group">
                   Calculate Your Savings
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </Button>
               <Button variant="outline" size="xl" asChild>
-                <a href="#contact" className="flex items-center gap-2">
+                <Link to="/contact" className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
                   Get Free Quote
-                </a>
+                </Link>
               </Button>
             </motion.div>
 
