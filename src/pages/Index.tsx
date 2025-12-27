@@ -1,15 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { SavingsCalculator } from "@/components/SavingsCalculator";
-import { Benefits } from "@/components/Benefits";
-import { BatterySystems } from "@/components/BatterySystems";
-import { BatteryCalculator } from "@/components/BatteryCalculator";
-import { AIBatteryCalculator } from "@/components/AIBatteryCalculator";
-import { Projects } from "@/components/Projects";
-import { Testimonials } from "@/components/Testimonials";
-import { FAQ } from "@/components/FAQ";
 import { ContactForm } from "@/components/ContactForm";
+import { Benefits } from "@/components/Benefits";
+import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { StickyCTA } from "@/components/StickyCTA";
 
@@ -98,15 +92,9 @@ const Index = () => {
         <Header />
         <main>
           <Hero />
-          <SavingsCalculator />
-          <Benefits />
-          <BatterySystems />
-          <BatteryCalculator />
-          <AIBatteryCalculator />
-          <Projects />
-          <Testimonials />
-          <FAQ />
           <ContactForm />
+          <Benefits />
+          <Testimonials />
         </main>
         <Footer />
         <StickyCTA />

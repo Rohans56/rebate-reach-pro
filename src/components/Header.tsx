@@ -1,21 +1,21 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/adsa-logo.png";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "Calculator", href: "#calculator" },
-  { label: "Solar Panels", href: "#benefits" },
-  { label: "Batteries", href: "#batteries" },
-  { label: "Our Work", href: "#projects" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,24 +38,28 @@ export const Header = () => {
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
-            <a href="#home" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-2">
               <img
                 src={logo}
                 alt="ADSA Solar - Australian Solar Panel Installation"
                 className="h-12 md:h-14 w-auto"
               />
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
-                  className="px-4 py-2 rounded-lg text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/5 transition-colors"
+                  to={item.href}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    location.pathname === item.href 
+                      ? "text-primary bg-primary/10" 
+                      : "text-foreground/80 hover:text-primary hover:bg-primary/5"
+                  }`}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -66,7 +70,7 @@ export const Header = () => {
                 1300 123 456
               </a>
               <Button variant="default" size="default" asChild>
-                <a href="#calculator">Get Free Quote</a>
+                <Link to="/contact">Get Free Quote</Link>
               </Button>
             </div>
 
@@ -93,17 +97,24 @@ export const Header = () => {
           >
             <nav className="container mx-auto px-4 py-8 flex flex-col gap-2">
               {navItems.map((item, index) => (
-                <motion.a
+                <motion.div
                   key={item.label}
-                  href={item.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-4 py-4 text-lg font-medium text-foreground hover:text-primary hover:bg-muted rounded-xl"
                 >
-                  {item.label}
-                </motion.a>
+                  <Link
+                    to={item.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block px-4 py-4 text-lg font-medium rounded-xl ${
+                      location.pathname === item.href 
+                        ? "text-primary bg-primary/10" 
+                        : "text-foreground hover:text-primary hover:bg-muted"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
               ))}
               <div className="mt-6 flex flex-col gap-3">
                 <a
@@ -114,7 +125,7 @@ export const Header = () => {
                   1300 123 456
                 </a>
                 <Button variant="default" size="lg" className="w-full" asChild>
-                  <a href="#calculator">Get Your Free Quote</a>
+                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Get Your Free Quote</Link>
                 </Button>
               </div>
             </nav>

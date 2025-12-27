@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Battery, Zap, Shield, Clock, ArrowRight, Check } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import batteryImage1 from "@/assets/project-battery-1.jpeg";
 import batteryImage2 from "@/assets/project-battery-2.jpeg";
@@ -54,10 +55,10 @@ export const BatterySystems = () => {
             </div>
 
             <Button variant="hero" size="lg" asChild>
-              <a href="#calculator" className="group">
+              <Link to="/contact" className="group">
                 Get Battery Quote
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
             </Button>
           </motion.div>
 

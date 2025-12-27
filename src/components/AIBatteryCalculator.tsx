@@ -14,6 +14,7 @@ import {
   Info,
   Lightbulb
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { useToast } from "@/hooks/use-toast";
@@ -403,10 +404,10 @@ export const AIBatteryCalculator = () => {
 
                   {/* CTA */}
                   <Button variant="accent" size="lg" className="w-full" asChild>
-                    <a href="#contact" className="group">
+                    <Link to="/contact" className="group">
                       Get Your Personalized Quote
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </a>
+                    </Link>
                   </Button>
                 </div>
               ) : !error && (
