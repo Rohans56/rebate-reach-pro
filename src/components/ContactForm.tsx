@@ -98,8 +98,8 @@ export const ContactForm = () => {
                 </div>
                 <div>
                   <p className="text-sm text-primary-foreground/60">Call Us</p>
-                  <a href="tel:1300123456" className="text-xl font-semibold text-primary-foreground hover:text-solar-orange transition-colors">
-                    1300 123 456
+                  <a href="tel:0469312118" className="text-xl font-semibold text-primary-foreground hover:text-solar-orange transition-colors">
+                    0469 312 118
                   </a>
                 </div>
               </div>
@@ -109,8 +109,8 @@ export const ContactForm = () => {
                 </div>
                 <div>
                   <p className="text-sm text-primary-foreground/60">Email Us</p>
-                  <a href="mailto:info@adsasolar.com.au" className="text-xl font-semibold text-primary-foreground hover:text-solar-orange transition-colors">
-                    info@adsasolar.com.au
+                  <a href="mailto:adsaaustraliansolar@gmail.com" className="text-lg font-semibold text-primary-foreground hover:text-solar-orange transition-colors">
+                    adsaaustraliansolar@gmail.com
                   </a>
                 </div>
               </div>
@@ -119,8 +119,8 @@ export const ContactForm = () => {
                   <MapPin className="w-6 h-6 text-solar-orange" />
                 </div>
                 <div>
-                  <p className="text-sm text-primary-foreground/60">Service Area</p>
-                  <p className="text-xl font-semibold text-primary-foreground">Melbourne & All Victoria</p>
+                  <p className="text-sm text-primary-foreground/60">Address</p>
+                  <p className="text-xl font-semibold text-primary-foreground">82 Yale Dr, Epping, 3076</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
