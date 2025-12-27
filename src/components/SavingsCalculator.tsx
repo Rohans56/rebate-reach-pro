@@ -51,20 +51,27 @@ export const SavingsCalculator = () => {
   }, [billAmount, systemSize, includeBattery, batterySize]);
 
   return (
-    <section id="calculator" className="py-20 md:py-32 bg-gradient-to-b from-background to-secondary/30">
-      <div className="container mx-auto px-4">
+    <section id="calculator" className="py-20 md:py-32 bg-muted/30 relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-solar-mint/40 rounded-full blur-3xl translate-y-1/2 translate-x-1/4" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent mb-4">
-            <Calculator className="w-4 h-4" />
-            <span className="text-sm font-semibold">Instant Savings Calculator</span>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-px w-8 bg-primary" />
+            <span className="text-sm font-semibold text-primary uppercase tracking-widest">Instant Calculator</span>
+            <div className="h-px w-8 bg-primary" />
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Find Your Savings — In Just <span className="text-accent">30 Seconds</span>
+            Find Your Savings — In Just{" "}
+            <span className="text-gradient-primary">30 Seconds</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Average customers in Melbourne are saving $1,500+ every year on power bills
@@ -78,9 +85,9 @@ export const SavingsCalculator = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-card rounded-2xl shadow-card p-6 md:p-8"
+              className="bg-card rounded-3xl shadow-card border border-border p-6 md:p-8"
             >
-              <h3 className="text-xl font-semibold text-foreground mb-6">Your Details</h3>
+              <h3 className="text-xl font-bold text-foreground mb-6">Your Details</h3>
 
               {/* Quarterly Bill */}
               <div className="mb-8">
@@ -130,14 +137,14 @@ export const SavingsCalculator = () => {
               <div className="mb-8">
                 <button
                   onClick={() => setIncludeBattery(!includeBattery)}
-                  className={`w-full p-4 rounded-xl border-2 transition-all flex items-center gap-4 ${
+                  className={`w-full p-4 rounded-2xl border-2 transition-all flex items-center gap-4 ${
                     includeBattery
-                      ? "border-primary bg-primary/5"
-                      : "border-border hover:border-primary/50"
+                      ? "border-secondary bg-secondary/5"
+                      : "border-border hover:border-secondary/50"
                   }`}
                 >
-                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${
-                    includeBattery ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                    includeBattery ? "bg-secondary text-secondary-foreground" : "bg-muted text-muted-foreground"
                   }`}>
                     <Battery className="w-6 h-6" />
                   </div>
@@ -146,9 +153,9 @@ export const SavingsCalculator = () => {
                     <p className="text-sm text-muted-foreground">Get up to $4,000+ extra rebate</p>
                   </div>
                   <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
-                    includeBattery ? "border-primary bg-primary" : "border-muted-foreground"
+                    includeBattery ? "border-secondary bg-secondary" : "border-muted-foreground"
                   }`}>
-                    {includeBattery && <CheckCircle className="w-4 h-4 text-primary-foreground" />}
+                    {includeBattery && <CheckCircle className="w-4 h-4 text-secondary-foreground" />}
                   </div>
                 </button>
               </div>
@@ -165,7 +172,7 @@ export const SavingsCalculator = () => {
                     <label className="text-sm font-medium text-muted-foreground">
                       Battery Capacity
                     </label>
-                    <span className="text-lg font-bold text-primary">{batterySize[0]} kWh</span>
+                    <span className="text-lg font-bold text-secondary">{batterySize[0]} kWh</span>
                   </div>
                   <Slider
                     value={batterySize}
@@ -188,74 +195,79 @@ export const SavingsCalculator = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-hero rounded-2xl shadow-card p-6 md:p-8 text-primary-foreground"
+              className="bg-solar-navy rounded-3xl shadow-float p-6 md:p-8 text-white relative overflow-hidden"
             >
-              <h3 className="text-xl font-semibold mb-6">Your Estimated Savings</h3>
+              {/* Decorative blob */}
+              <div className="absolute -top-20 -right-20 w-60 h-60 bg-solar-teal/20 rounded-full blur-3xl" />
+              
+              <div className="relative z-10">
+                <h3 className="text-xl font-bold mb-6">Your Estimated Savings</h3>
 
-              {/* Annual Savings */}
-              <div className="bg-primary-foreground/10 rounded-xl p-6 mb-6 backdrop-blur-sm">
-                <p className="text-sm text-primary-foreground/70 mb-1">Annual Savings</p>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-5xl font-bold">${calculations.annualSavings.toLocaleString()}</span>
-                  <span className="text-primary-foreground/70">/year</span>
-                </div>
-              </div>
-
-              {/* Breakdown */}
-              <div className="space-y-4 mb-6">
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-solar-orange" />
-                    <span className="text-sm">Solar Panel Savings</span>
+                {/* Annual Savings */}
+                <div className="bg-white/10 rounded-2xl p-6 mb-6 backdrop-blur-sm">
+                  <p className="text-sm text-white/70 mb-1">Annual Savings</p>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-5xl font-bold">${calculations.annualSavings.toLocaleString()}</span>
+                    <span className="text-white/70">/year</span>
                   </div>
-                  <span className="font-semibold">${calculations.solarSavings.toLocaleString()}/yr</span>
                 </div>
-                {includeBattery && (
+
+                {/* Breakdown */}
+                <div className="space-y-4 mb-6">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
-                      <Battery className="w-4 h-4 text-solar-orange" />
-                      <span className="text-sm">Battery Savings</span>
+                      <Zap className="w-4 h-4 text-primary" />
+                      <span className="text-sm">Solar Panel Savings</span>
                     </div>
-                    <span className="font-semibold">${calculations.batterySavings.toLocaleString()}/yr</span>
+                    <span className="font-semibold">${calculations.solarSavings.toLocaleString()}/yr</span>
                   </div>
-                )}
-                <div className="h-px bg-primary-foreground/20" />
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-2">
-                    <DollarSign className="w-4 h-4 text-solar-yellow" />
-                    <span className="text-sm">Total Rebates</span>
+                  {includeBattery && (
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-2">
+                        <Battery className="w-4 h-4 text-secondary" />
+                        <span className="text-sm">Battery Savings</span>
+                      </div>
+                      <span className="font-semibold">${calculations.batterySavings.toLocaleString()}/yr</span>
+                    </div>
+                  )}
+                  <div className="h-px bg-white/20" />
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center gap-2">
+                      <DollarSign className="w-4 h-4 text-solar-coral-light" />
+                      <span className="text-sm">Total Rebates</span>
+                    </div>
+                    <span className="font-semibold text-solar-coral-light">
+                      -${calculations.totalRebate.toLocaleString()}
+                    </span>
                   </div>
-                  <span className="font-semibold text-solar-yellow">
-                    -${calculations.totalRebate.toLocaleString()}
-                  </span>
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center gap-2">
+                      <TrendingUp className="w-4 h-4 text-solar-teal-light" />
+                      <span className="text-sm">Payback Period</span>
+                    </div>
+                    <span className="font-semibold">{calculations.paybackYears} years</span>
+                  </div>
                 </div>
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="w-4 h-4 text-solar-orange" />
-                    <span className="text-sm">Payback Period</span>
+
+                {/* Net Cost */}
+                <div className="bg-white/10 rounded-2xl p-4 mb-6 backdrop-blur-sm">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-white/70">Est. Net System Cost</span>
+                    <span className="text-2xl font-bold">${calculations.netCost.toLocaleString()}</span>
                   </div>
-                  <span className="font-semibold">{calculations.paybackYears} years</span>
                 </div>
+
+                <Button variant="accent" size="lg" className="w-full" asChild>
+                  <a href="#contact" className="group">
+                    Get Your Free Quote
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </Button>
+
+                <p className="text-xs text-center text-white/50 mt-4">
+                  *Estimates based on average Melbourne household data. Actual savings may vary.
+                </p>
               </div>
-
-              {/* Net Cost */}
-              <div className="bg-primary-foreground/10 rounded-xl p-4 mb-6 backdrop-blur-sm">
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-primary-foreground/70">Est. Net System Cost</span>
-                  <span className="text-2xl font-bold">${calculations.netCost.toLocaleString()}</span>
-                </div>
-              </div>
-
-              <Button variant="hero" size="lg" className="w-full" asChild>
-                <a href="#contact" className="group">
-                  Get Your Free Quote
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-
-              <p className="text-xs text-center text-primary-foreground/50 mt-4">
-                *Estimates based on average Melbourne household data. Actual savings may vary.
-              </p>
             </motion.div>
           </div>
         </div>
