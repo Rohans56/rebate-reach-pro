@@ -10,6 +10,7 @@ const navItems = [
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/contact" },
+  { label: "Refund", href: "/refund" },
 ];
 
 export const Header = () => {
