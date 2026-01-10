@@ -14,7 +14,6 @@ const projects = [
     location: "Point Cook, VIC",
     date: "November 2025",
     specs: "16 x 415W Panels",
-    savings: "Save $1,400/yr",
     type: "solar",
   },
   {
@@ -23,7 +22,6 @@ const projects = [
     location: "Tarneit, VIC",
     date: "November 2025",
     specs: "Hybrid System",
-    savings: "$4,500 Rebate Applied",
     type: "battery",
   },
   {
@@ -32,7 +30,6 @@ const projects = [
     location: "Truganina, VIC",
     date: "November 2025",
     specs: "24 x 420W Panels",
-    savings: "Save $2,100/yr",
     type: "solar",
   },
   {
@@ -41,7 +38,6 @@ const projects = [
     location: "Werribee, VIC",
     date: "November 2025",
     specs: "Full Backup System",
-    savings: "$6,800 Rebate Applied",
     type: "battery",
   },
   {
@@ -50,7 +46,6 @@ const projects = [
     location: "Melton, VIC",
     date: "December 2025",
     specs: "8kW Solar + 10kWh Battery",
-    savings: "Save $2,300/yr",
     type: "combo",
   },
   {
@@ -59,7 +54,6 @@ const projects = [
     location: "Craigieburn, VIC",
     date: "December 2025",
     specs: "32 x 415W Panels",
-    savings: "Save $2,500/yr",
     type: "solar",
   },
 ];
@@ -133,9 +127,6 @@ export const Projects = () => {
                     <Zap className="w-4 h-4 text-primary" />
                   )}
                   <span className="text-sm text-muted-foreground">{project.specs}</span>
-                </div>
-                <div className="pt-3 border-t border-border">
-                  <span className="font-bold text-accent text-lg">{project.savings}</span>
                 </div>
               </div>
             </motion.div>
