@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Send, Mail, MapPin, Clock, ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -92,6 +92,17 @@ export const ContactForm = () => {
             </p>
 
             <div className="space-y-6 mb-8">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-primary-foreground/10 flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-solar-orange" />
+                </div>
+                <div>
+                  <p className="text-sm text-primary-foreground/60">Call Us</p>
+                  <a href="tel:0469312118" className="text-xl font-semibold text-primary-foreground hover:text-solar-orange transition-colors">
+                    0469 312 118
+                  </a>
+                </div>
+              </div>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-primary-foreground/10 flex items-center justify-center">
                   <Mail className="w-6 h-6 text-solar-orange" />

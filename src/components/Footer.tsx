@@ -1,4 +1,4 @@
-import { Mail, MapPin, Facebook, Instagram, Linkedin, ArrowRight } from "lucide-react";
+import { Mail, MapPin, Phone, Facebook, Instagram, Linkedin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/adsa-logo.png";
 
@@ -58,6 +58,15 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-bold mb-4">Contact Us</h4>
             <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-xl bg-solar-orange/20 flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-5 h-5 text-solar-orange" />
+                </div>
+                <div>
+                  <p className="text-sm text-white/60">Phone</p>
+                  <a href="tel:0469312118" className="font-semibold hover:text-primary transition-colors">0469 312 118</a>
+                </div>
+              </li>
               <li className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center flex-shrink-0">
                   <Mail className="w-5 h-5 text-primary" />
