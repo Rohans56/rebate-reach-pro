@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/adsa-logo.png";
@@ -66,10 +66,6 @@ export const Header = () => {
 
             {/* CTA Buttons */}
             <div className="hidden md:flex items-center gap-4">
-              <a href="tel:0469312118" className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
-                <Phone className="w-4 h-4 text-primary" />
-                0469 312 118
-              </a>
               <Button variant="default" size="default" asChild>
                 <Link to="/contact">Get Free Quote</Link>
               </Button>
@@ -118,13 +114,6 @@ export const Header = () => {
                 </motion.div>
               ))}
               <div className="mt-6 flex flex-col gap-3">
-                <a
-                  href="tel:0469312118"
-                  className="flex items-center justify-center gap-2 py-4 text-lg font-medium text-primary"
-                >
-                  <Phone className="w-5 h-5" />
-                  0469 312 118
-                </a>
                 <Button variant="default" size="lg" className="w-full" asChild>
                   <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Get Your Free Quote</Link>
                 </Button>
