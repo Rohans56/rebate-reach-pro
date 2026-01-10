@@ -97,6 +97,7 @@ export const Footer = () => {
           <div className="flex gap-6 text-sm text-white/60">
             <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+            <Link to="/refund" className="hover:text-primary transition-colors">Refund Policy</Link>
           </div>
         </div>
       </div>
