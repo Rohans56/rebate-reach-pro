@@ -3,7 +3,6 @@ import { Header } from "@/components/Header";
 import { SavingsCalculator } from "@/components/SavingsCalculator";
 import { BatterySystems } from "@/components/BatterySystems";
 import { BatteryCalculator } from "@/components/BatteryCalculator";
-import { AIBatteryCalculator } from "@/components/AIBatteryCalculator";
 import { Footer } from "@/components/Footer";
 import { StickyCTA } from "@/components/StickyCTA";
 
@@ -25,7 +24,6 @@ const Services = () => {
           <SavingsCalculator />
           <BatterySystems />
           <BatteryCalculator />
-          <AIBatteryCalculator />
         </main>
         <Footer />
         <StickyCTA />
