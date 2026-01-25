@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
-import { SavingsCalculator } from "@/components/SavingsCalculator";
 import { BatterySystems } from "@/components/BatterySystems";
 import { BatteryCalculator } from "@/components/BatteryCalculator";
 import { Footer } from "@/components/Footer";
@@ -21,7 +20,6 @@ const Services = () => {
       <div className="min-h-screen">
         <Header />
         <main className="pt-20">
-          <SavingsCalculator />
           <BatterySystems />
           <BatteryCalculator />
         </main>
