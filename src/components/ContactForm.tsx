@@ -53,7 +53,23 @@ export const ContactForm = () => {
 
       if (pylonResponse.error) {
         console.error("Pylon sync error:", pylonResponse.error);
-        // Don't fail the form submission if Pylon fails
+      }
+
+      // Send email notification
+      const notifyResponse = await supabase.functions.invoke("notify-new-lead", {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          streetAddress: formData.streetAddress,
+          suburb: formData.suburb,
+          postcode: formData.postcode,
+          message: formData.message,
+        },
+      });
+
+      if (notifyResponse.error) {
+        console.error("Email notification error:", notifyResponse.error);
       }
 
       toast({
