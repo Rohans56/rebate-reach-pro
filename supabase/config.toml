@@ -5,3 +5,6 @@ verify_jwt = false
 
 [functions.send-to-pylon]
 verify_jwt = false
+
+[functions.notify-new-lead]
+verify_jwt = false
