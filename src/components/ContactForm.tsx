@@ -38,38 +38,37 @@ export const ContactForm = () => {
 
       if (error) throw error;
 
-      // Send to Pylon CRM
-      const pylonResponse = await supabase.functions.invoke("send-to-pylon", {
-        body: {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          streetAddress: formData.streetAddress,
-          suburb: formData.suburb,
-          postcode: formData.postcode,
-          message: formData.message,
-        },
-      });
+      // Send to Pylon CRM and email notification in parallel (don't block each other)
+      const [pylonResponse, notifyResponse] = await Promise.allSettled([
+        supabase.functions.invoke("send-to-pylon", {
+          body: {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            streetAddress: formData.streetAddress,
+            suburb: formData.suburb,
+            postcode: formData.postcode,
+            message: formData.message,
+          },
+        }),
+        supabase.functions.invoke("notify-new-lead", {
+          body: {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            streetAddress: formData.streetAddress,
+            suburb: formData.suburb,
+            postcode: formData.postcode,
+            message: formData.message,
+          },
+        }),
+      ]);
 
-      if (pylonResponse.error) {
-        console.error("Pylon sync error:", pylonResponse.error);
+      if (pylonResponse.status === "rejected" || pylonResponse.value?.error) {
+        console.error("Pylon sync error:", pylonResponse.status === "rejected" ? pylonResponse.reason : pylonResponse.value?.error);
       }
-
-      // Send email notification
-      const notifyResponse = await supabase.functions.invoke("notify-new-lead", {
-        body: {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          streetAddress: formData.streetAddress,
-          suburb: formData.suburb,
-          postcode: formData.postcode,
-          message: formData.message,
-        },
-      });
-
-      if (notifyResponse.error) {
-        console.error("Email notification error:", notifyResponse.error);
+      if (notifyResponse.status === "rejected" || notifyResponse.value?.error) {
+        console.error("Email notification error:", notifyResponse.status === "rejected" ? notifyResponse.reason : notifyResponse.value?.error);
       }
 
       toast({
