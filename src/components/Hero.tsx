@@ -3,6 +3,7 @@ import { ArrowRight, Sun, Zap, DollarSign, Award, CheckCircle, Phone } from "luc
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import adsaLogo from "@/assets/adsa-logo.png";
+import { HeroLeadForm } from "@/components/HeroLeadForm";
 const stats = [{
   icon: DollarSign,
   value: "$2,300+",
@@ -164,72 +165,7 @@ export const Hero = () => {
           </div>
 
           {/* Right Content - Feature Card */}
-          <motion.div initial={{
-          opacity: 0,
-          x: 50
-        }} animate={{
-          opacity: 1,
-          x: 0
-        }} transition={{
-          duration: 0.8,
-          delay: 0.3
-        }} className="relative">
-            {/* Main card */}
-            <div className="relative bg-card rounded-3xl shadow-float p-8 md:p-10 border border-border">
-              {/* Company badge */}
-              <div className="flex items-center gap-4 mb-8">
-                <img src={adsaLogo} alt="ADSA Australian Solar" className="h-16 w-auto" />
-                <div>
-                  <h2 className="text-xl font-bold text-foreground">ADSA Australian Solar</h2>
-                  <p className="text-sm text-primary font-medium">Melbourne's Trusted Experts</p>
-                </div>
-              </div>
-
-              {/* Trust points */}
-              <div className="space-y-4 mb-8">
-                {trustPoints.map((point, index) => <motion.div key={index} initial={{
-                opacity: 0,
-                x: 20
-              }} animate={{
-                opacity: 1,
-                x: 0
-              }} transition={{
-                duration: 0.4,
-                delay: 0.5 + index * 0.1
-              }} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center">
-                      <CheckCircle className="w-4 h-4 text-secondary" />
-                    </div>
-                    <span className="text-foreground font-medium">{point}</span>
-                  </motion.div>)}
-              </div>
-
-              {/* Stats grid */}
-              <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border">
-                {stats.map((stat, index) => <div key={index} className="text-center">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                      <stat.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <p className="text-lg font-bold text-foreground">{stat.value}</p>
-                    <p className="text-xs text-muted-foreground">{stat.label}</p>
-                  </div>)}
-              </div>
-
-              {/* Floating badge */}
-              <motion.div animate={{
-              y: [-5, 5, -5]
-            }} transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }} className="absolute -top-4 -right-4 bg-gradient-accent text-primary-foreground px-4 py-2 rounded-full shadow-glow text-sm font-semibold">
-                2025 Rebates Available
-              </motion.div>
-            </div>
-
-            {/* Background decorative card */}
-            <div className="absolute -z-10 top-6 left-6 right-6 bottom-0 bg-solar-mint rounded-3xl" />
-          </motion.div>
+          <HeroLeadForm />
         </div>
       </div>
 
