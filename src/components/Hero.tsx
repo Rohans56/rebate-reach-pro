@@ -3,6 +3,7 @@ import { ArrowRight, Sun, Zap, DollarSign, Award, CheckCircle, Phone } from "luc
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import adsaLogo from "@/assets/adsa-logo.png";
+import { HeroLeadForm } from "@/components/HeroLeadForm";
 const stats = [{
   icon: DollarSign,
   value: "$2,300+",

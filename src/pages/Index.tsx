@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { ContactForm } from "@/components/ContactForm";
 import { Benefits } from "@/components/Benefits";
+import { ContactForm } from "@/components/ContactForm";
 import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { StickyCTA } from "@/components/StickyCTA";
@@ -92,8 +92,8 @@ const Index = () => {
         <Header />
         <main>
           <Hero />
-          <ContactForm />
           <Benefits />
+          <ContactForm />
           <Testimonials />
         </main>
         <Footer />
