@@ -124,8 +124,8 @@ export const ContactForm = () => {
                 </div>
                 <div>
                   <p className="text-sm text-primary-foreground/60">Email Us</p>
-                  <a href="mailto:adsaaustraliansolar@gmail.com" className="text-lg font-semibold text-primary-foreground hover:text-solar-orange transition-colors">
-                    adsaaustraliansolar@gmail.com
+                  <a href="mailto:info@adsaaustraliansolar.com.au" className="text-lg font-semibold text-primary-foreground hover:text-solar-orange transition-colors">
+                    info@adsaaustraliansolar.com.au
                   </a>
                 </div>
               </div>

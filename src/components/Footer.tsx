@@ -73,7 +73,7 @@ export const Footer = () => {
                 </div>
                 <div>
                   <p className="text-sm text-white/60">Email</p>
-                  <a href="mailto:adsaaustraliansolar@gmail.com" className="font-semibold hover:text-primary transition-colors text-sm">adsaaustraliansolar@gmail.com</a>
+                  <a href="mailto:info@adsaaustraliansolar.com.au" className="font-semibold hover:text-primary transition-colors text-sm">info@adsaaustraliansolar.com.au</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
