@@ -7,7 +7,6 @@ import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { StickyCTA } from "@/components/StickyCTA";
 import { LeadPopup } from "@/components/LeadPopup";
-import { EOFYBanner } from "@/components/EOFYBanner";
 
 const Index = () => {
   return (
@@ -92,7 +91,6 @@ const Index = () => {
 
       <div className="min-h-screen">
         <Header />
-        <EOFYBanner />
         <main>
           <Hero />
           <Benefits />

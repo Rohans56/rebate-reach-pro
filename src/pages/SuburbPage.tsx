@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { StickyCTA } from "@/components/StickyCTA";
-import { EOFYBanner } from "@/components/EOFYBanner";
 import { CheckCircle, Star, Phone, ArrowRight, MapPin, Zap, Battery, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -79,7 +78,6 @@ export const SuburbPage = ({ data }: { data: SuburbData }) => {
       </Helmet>
 
       <Header />
-      <EOFYBanner />
 
       {/* HERO */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-[#1e3a5f] to-[#2a4f80] text-white relative overflow-hidden">
