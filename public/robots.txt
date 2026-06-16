@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://adsaaustraliansolar.com.au/sitemap.xml
