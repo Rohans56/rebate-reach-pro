@@ -69,3 +69,53 @@ export const MeltonSolar = () => <SuburbPage data={{
   nearbySuburbs: ["Bacchus Marsh", "Caroline Springs", "Rockbank", "Diggers Rest", "Tarneit"],
   projectExample: { type: "20kW Solar + 42kWh Battery", size: "20kW", saving: "$3,200" }
 }} />;
+
+export const HoppersCrossingSolar = () => <SuburbPage data={{
+  suburb: "Hoppers Crossing",
+  slug: "hoppers-crossing",
+  region: "Melbourne's Western Suburbs",
+  postcode: "3029",
+  blurb: "Hoppers Crossing is one of Melbourne's most established western suburbs — and solar uptake is growing fast. ADSA Australian Solar has helped families across Hoppers Crossing dramatically cut their power bills with quality solar and battery systems.",
+  nearbySuburbs: ["Werribee", "Tarneit", "Truganina", "Point Cook", "Wyndham Vale"],
+  projectExample: { type: "6.6kW Solar + 10kWh Battery", size: "6.6kW", saving: "$1,850" }
+}} />;
+
+export const WyndhamValeSolar = () => <SuburbPage data={{
+  suburb: "Wyndham Vale",
+  slug: "wyndham-vale",
+  region: "Melbourne's Western Growth Corridor",
+  postcode: "3024",
+  blurb: "Wyndham Vale is one of Victoria's fastest-growing communities and solar demand is booming. ADSA Australian Solar provides professional solar panel and battery installations across Wyndham Vale, with government rebates up to $18,500 available right now.",
+  nearbySuburbs: ["Tarneit", "Hoppers Crossing", "Werribee", "Manor Lakes", "Truganina"],
+  projectExample: { type: "6.6kW Rooftop Solar", size: "6.6kW", saving: "$1,700" }
+}} />;
+
+export const DonnybrookSolar = () => <SuburbPage data={{
+  suburb: "Donnybrook",
+  slug: "donnybrook",
+  region: "Melbourne's Northern Growth Corridor",
+  postcode: "3064",
+  blurb: "Donnybrook is one of Melbourne's newest and most exciting growth suburbs. ADSA Australian Solar has already completed large-scale solar and battery installations in Donnybrook — including our 51kWh battery + 13.3kW solar project right in the area.",
+  nearbySuburbs: ["Craigieburn", "Mickleham", "Kalkallo", "Beveridge", "Roxburgh Park"],
+  projectExample: { type: "51kWh Battery + 13.3kW Solar", size: "13.3kW", saving: "$3,000" }
+}} />;
+
+export const PakenhamSolar = () => <SuburbPage data={{
+  suburb: "Pakenham",
+  slug: "pakenham",
+  region: "Melbourne's South-Eastern Growth Corridor",
+  postcode: "3810",
+  blurb: "Pakenham homeowners are increasingly turning to solar to combat rising electricity costs. ADSA Australian Solar delivers expert solar panel and battery installations across Pakenham, backed by government rebates up to $18,500 and a 25-year panel warranty.",
+  nearbySuburbs: ["Officer", "Clyde North", "Berwick", "Beaconsfield", "Drouin"],
+  projectExample: { type: "6.6kW Solar + Battery", size: "6.6kW", saving: "$1,750" }
+}} />;
+
+export const OfficerSolar = () => <SuburbPage data={{
+  suburb: "Officer",
+  slug: "officer",
+  region: "Melbourne's South-Eastern Growth Corridor",
+  postcode: "3809",
+  blurb: "Officer is a rapidly growing suburb in Melbourne's south-east, and solar is one of the smartest investments new homeowners are making. ADSA Australian Solar installs premium solar panels and battery systems across Officer with fast turnaround and expert local service.",
+  nearbySuburbs: ["Pakenham", "Clyde North", "Berwick", "Beaconsfield", "Cardinia"],
+  projectExample: { type: "6.6kW Solar System", size: "6.6kW", saving: "$1,600" }
+}} />;

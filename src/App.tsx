@@ -10,7 +10,7 @@ import ProjectsPage from "./pages/ProjectsPage";
 import Contact from "./pages/Contact";
 import Refund from "./pages/Refund";
 import NotFound from "./pages/NotFound";
-import { WerribeeSolar, TarneitSolar, PointCookSolar, CraigiburnSolar, ClydeNorthSolar, TruginanaSolar, MeltonSolar } from "./pages/SuburbPages";
+import { WerribeeSolar, TarneitSolar, PointCookSolar, CraigiburnSolar, ClydeNorthSolar, TruginanaSolar, MeltonSolar, HoppersCrossingSolar, WyndhamValeSolar, DonnybrookSolar, PakenhamSolar, OfficerSolar } from "./pages/SuburbPages";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +35,11 @@ const App = () => (
             <Route path="/solar-panels-clyde-north" element={<ClydeNorthSolar />} />
             <Route path="/solar-panels-truganina" element={<TruginanaSolar />} />
             <Route path="/solar-panels-melton" element={<MeltonSolar />} />
+            <Route path="/solar-panels-hoppers-crossing" element={<HoppersCrossingSolar />} />
+            <Route path="/solar-panels-wyndham-vale" element={<WyndhamValeSolar />} />
+            <Route path="/solar-panels-donnybrook" element={<DonnybrookSolar />} />
+            <Route path="/solar-panels-pakenham" element={<PakenhamSolar />} />
+            <Route path="/solar-panels-officer" element={<OfficerSolar />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

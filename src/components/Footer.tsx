@@ -2,15 +2,32 @@ import { Mail, MapPin, Phone, Facebook, Instagram, Linkedin, ArrowRight } from "
 import { Link } from "react-router-dom";
 import logo from "@/assets/adsa-logo.png";
 
+const suburbLinks = [
+  { label: "Solar Panels Werribee", slug: "werribee" },
+  { label: "Solar Panels Tarneit", slug: "tarneit" },
+  { label: "Solar Panels Point Cook", slug: "point-cook" },
+  { label: "Solar Panels Craigieburn", slug: "craigieburn" },
+  { label: "Solar Panels Clyde North", slug: "clyde-north" },
+  { label: "Solar Panels Truganina", slug: "truganina" },
+  { label: "Solar Panels Melton", slug: "melton" },
+  { label: "Solar Panels Hoppers Crossing", slug: "hoppers-crossing" },
+  { label: "Solar Panels Wyndham Vale", slug: "wyndham-vale" },
+  { label: "Solar Panels Donnybrook", slug: "donnybrook" },
+  { label: "Solar Panels Pakenham", slug: "pakenham" },
+  { label: "Solar Panels Officer", slug: "officer" },
+];
+
 export const Footer = () => {
   return (
     <footer className="bg-solar-navy text-white relative overflow-hidden">
-      {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-solar-teal/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
 
       <div className="container mx-auto px-4 py-16 relative z-10">
+
+        {/* Main grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
           {/* Brand */}
           <div>
             <img src={logo} alt="ADSA Solar" className="h-14 mb-4" />
@@ -89,6 +106,26 @@ export const Footer = () => {
           </div>
         </div>
 
+        {/* Areas We Service */}
+        <div className="mt-12 pt-10 border-t border-white/10">
+          <h4 className="text-lg font-bold mb-6 flex items-center gap-2">
+            <MapPin className="w-5 h-5 text-primary" />
+            Areas We Service
+          </h4>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-3">
+            {suburbLinks.map(({ label, slug }) => (
+              <Link
+                key={slug}
+                to={`/solar-panels-${slug}`}
+                className="text-sm text-white/60 hover:text-primary transition-colors inline-flex items-center gap-1 group"
+              >
+                <ArrowRight className="w-3 h-3 flex-shrink-0 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-white/60">
@@ -100,6 +137,7 @@ export const Footer = () => {
             <Link to="/refund" className="hover:text-primary transition-colors">Refund Policy</Link>
           </div>
         </div>
+
       </div>
     </footer>
   );
