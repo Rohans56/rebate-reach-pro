@@ -11,6 +11,8 @@ import Contact from "./pages/Contact";
 import Refund from "./pages/Refund";
 import NotFound from "./pages/NotFound";
 import { WerribeeSolar, TarneitSolar, PointCookSolar, CraigiburnSolar, ClydeNorthSolar, TruginanaSolar, MeltonSolar, HoppersCrossingSolar, WyndhamValeSolar, DonnybrookSolar, PakenhamSolar, OfficerSolar } from "./pages/SuburbPages";
+import { BlogIndex } from "./pages/BlogIndex";
+import { BlogRebates, BlogBattery, BlogCost, BlogFiT, BlogEV, BlogSystemSize, BlogLifespan } from "./pages/BlogPosts";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +42,15 @@ const App = () => (
             <Route path="/solar-panels-donnybrook" element={<DonnybrookSolar />} />
             <Route path="/solar-panels-pakenham" element={<PakenhamSolar />} />
             <Route path="/solar-panels-officer" element={<OfficerSolar />} />
+            {/* Blog */}
+            <Route path="/blog" element={<BlogIndex />} />
+            <Route path="/blog/solar-rebates-victoria-2025" element={<BlogRebates />} />
+            <Route path="/blog/is-solar-battery-worth-it-victoria" element={<BlogBattery />} />
+            <Route path="/blog/how-much-do-solar-panels-cost-melbourne" element={<BlogCost />} />
+            <Route path="/blog/solar-feed-in-tariff-victoria" element={<BlogFiT />} />
+            <Route path="/blog/ev-charger-solar-melbourne-guide" element={<BlogEV />} />
+            <Route path="/blog/6-6kw-vs-10kw-solar-system-melbourne" element={<BlogSystemSize />} />
+            <Route path="/blog/how-long-do-solar-panels-last" element={<BlogLifespan />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
