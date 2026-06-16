@@ -10,6 +10,7 @@ import ProjectsPage from "./pages/ProjectsPage";
 import Contact from "./pages/Contact";
 import Refund from "./pages/Refund";
 import NotFound from "./pages/NotFound";
+import { WerribeeSolar, TarneitSolar, PointCookSolar, CraigiburnSolar, ClydeNorthSolar, TruginanaSolar, MeltonSolar } from "./pages/SuburbPages";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,14 @@ const App = () => (
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/refund" element={<Refund />} />
+            {/* Suburb SEO pages */}
+            <Route path="/solar-panels-werribee" element={<WerribeeSolar />} />
+            <Route path="/solar-panels-tarneit" element={<TarneitSolar />} />
+            <Route path="/solar-panels-point-cook" element={<PointCookSolar />} />
+            <Route path="/solar-panels-craigieburn" element={<CraigiburnSolar />} />
+            <Route path="/solar-panels-clyde-north" element={<ClydeNorthSolar />} />
+            <Route path="/solar-panels-truganina" element={<TruginanaSolar />} />
+            <Route path="/solar-panels-melton" element={<MeltonSolar />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
