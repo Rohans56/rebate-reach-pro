@@ -60,98 +60,128 @@ export const Benefits = () => {
   return (
     <div ref={sectionRef}>
 
-      {/* ── SECTION 1: WHAT WE OFFER ── seamless flow from hero */}
-      <section className="py-28 relative overflow-hidden">
-
-        {/* Melbourne aerial — solar panels visible on rooftops */}
+      {/* ── SECTION 1: INTRO ── with Melbourne aerial background */}
+      <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="/melbourne-aerial.jpg"
-            alt=""
-            aria-hidden="true"
-            className="w-full h-full object-cover object-center"
-          />
-          {/* Light overlay — keeps aerial visible but content readable */}
-          <div className="absolute inset-0" style={{
-            background: "linear-gradient(180deg, rgba(255,255,255,0.93) 0%, rgba(255,255,255,0.90) 40%, rgba(255,255,255,0.93) 100%)"
-          }} />
+          <img src="/melbourne-aerial.jpg" alt="" aria-hidden="true" className="w-full h-full object-cover object-center" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.93) 100%)" }} />
         </div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="max-w-2xl mb-20"
-          >
-            <div className="flex items-center gap-3 mb-5">
+        <div className="container mx-auto px-6 relative z-10 max-w-3xl text-center">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <div className="flex items-center justify-center gap-3 mb-5">
               <div className="h-px w-10 bg-[#f26b3a]" />
               <span className="text-xs font-bold text-[#f26b3a] uppercase tracking-[0.2em]">What we do</span>
+              <div className="h-px w-10 bg-[#f26b3a]" />
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-[#1e3a5f] leading-tight mb-5">
               Everything you need to go solar — done properly.
             </h2>
-            <p className="text-gray-500 text-lg leading-relaxed">
+            <p className="text-[#3a5070] text-lg leading-relaxed">
               From the initial call to the day your system switches on, ADSA handles everything — design, installation, rebate paperwork, and grid connection.
             </p>
           </motion.div>
+        </div>
+      </section>
 
-          {/* Services — alternating layout, no cards */}
-          <div className="space-y-20">
-            {services.map((s, i) => (
-              <motion.div
-                key={s.number}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                custom={i}
-                viewport={{ once: true }}
-                className={`grid md:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? "md:grid-flow-dense" : ""}`}
-              >
-                {/* Content side */}
-                <div className={i % 2 === 1 ? "md:col-start-2" : ""}>
-                  <div className="flex items-baseline gap-4 mb-4">
-                    <span className="text-6xl font-black" style={{ color: s.color, opacity: 0.15 }}>{s.number}</span>
-                    <span className="text-sm font-semibold text-gray-400 uppercase tracking-wider">{s.sub}</span>
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-extrabold text-[#1e3a5f] mb-4">{s.title}</h3>
-                  <p className="text-gray-500 text-lg leading-relaxed mb-8">{s.body}</p>
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-2 font-bold text-sm group"
-                    style={{ color: s.color }}
-                  >
-                    Get a quote <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
+      {/* ── SERVICE 01: SOLAR PANELS ── white background */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(242,107,58,0.06) 0%, transparent 70%)", transform: "translate(20%, -20%)" }} />
+        <div className="container mx-auto px-6 max-w-5xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <div className="inline-flex items-center gap-3 mb-6">
+                <span className="text-5xl font-black text-[#f26b3a]">01</span>
+                <div className="h-px flex-1 bg-[#f26b3a]/20" />
+              </div>
+              <div className="inline-block bg-[#f26b3a]/10 text-[#f26b3a] text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
+                High-efficiency photovoltaic panels
+              </div>
+              <h3 className="text-3xl md:text-4xl font-extrabold text-[#1e3a5f] mb-5">Solar Panels</h3>
+              <p className="text-[#3a5070] text-lg leading-relaxed mb-8">
+                Premium tier-1 panels with a 25-year performance warranty — sized perfectly for your roof, your usage, and your goals. We don't do one-size-fits-all.
+              </p>
+              <Link to="/contact" className="inline-flex items-center gap-2 font-bold text-[#f26b3a] text-sm group hover:gap-3 transition-all">
+                Get a quote <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </motion.div>
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" custom={1} viewport={{ once: true }} className="flex items-center justify-center">
+              <div className="relative w-64 h-64 rounded-full flex flex-col items-center justify-center" style={{ background: "radial-gradient(circle, rgba(242,107,58,0.10) 0%, rgba(242,107,58,0.03) 70%)", border: "1.5px solid rgba(242,107,58,0.20)" }}>
+                <Sun className="w-12 h-12 text-[#f26b3a] mb-3" />
+                <div className="text-5xl font-black text-[#f26b3a]">$3,500</div>
+                <div className="text-sm font-semibold text-[#1e3a5f] mt-2 text-center px-6">Solar rebate available</div>
+                <motion.div animate={{ y: [-8, 8, -8] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-[#f26b3a]/30" />
+                <motion.div animate={{ y: [6, -6, 6] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} className="absolute -bottom-3 -left-3 w-5 h-5 rounded-full bg-[#f26b3a]/20" />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
-                {/* Stat side — large ambient number, no box */}
-                <div className={`flex items-center justify-center ${i % 2 === 1 ? "md:col-start-1" : ""}`}>
-                  <div className="relative">
-                    {/* Ambient circle */}
-                    <div className="w-64 h-64 rounded-full flex flex-col items-center justify-center" style={{ background: `radial-gradient(circle, ${s.color}10 0%, ${s.color}04 70%)`, border: `1px solid ${s.color}15` }}>
-                      <s.icon className="w-10 h-10 mb-4" style={{ color: s.color }} />
-                      <div className="text-5xl font-black" style={{ color: s.color }}>{s.stat}</div>
-                      <div className="text-xs font-semibold text-gray-400 mt-2 text-center px-8">{s.statLabel}</div>
-                    </div>
-                    {/* Floating accent dot */}
-                    <motion.div
-                      animate={{ y: [-8, 8, -8] }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                      className="absolute -top-4 -right-4 w-8 h-8 rounded-full"
-                      style={{ background: s.color, opacity: 0.3 }}
-                    />
-                    <motion.div
-                      animate={{ y: [6, -6, 6] }}
-                      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                      className="absolute -bottom-3 -left-3 w-5 h-5 rounded-full"
-                      style={{ background: s.color, opacity: 0.2 }}
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+      {/* ── SERVICE 02: BATTERY STORAGE ── light teal background */}
+      <section className="py-24 relative overflow-hidden" style={{ background: "#f0faf6" }}>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(46,184,122,0.08) 0%, transparent 70%)", transform: "translate(-20%, 20%)" }} />
+        <div className="container mx-auto px-6 max-w-5xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* Stat side first on desktop */}
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="flex items-center justify-center order-2 md:order-1">
+              <div className="relative w-64 h-64 rounded-full flex flex-col items-center justify-center" style={{ background: "radial-gradient(circle, rgba(46,184,122,0.12) 0%, rgba(46,184,122,0.03) 70%)", border: "1.5px solid rgba(46,184,122,0.25)" }}>
+                <Battery className="w-12 h-12 text-[#2eb87a] mb-3" />
+                <div className="text-5xl font-black text-[#2eb87a]">$5,000</div>
+                <div className="text-sm font-semibold text-[#1e3a5f] mt-2 text-center px-6">Battery rebate available</div>
+                <motion.div animate={{ y: [-8, 8, -8] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-[#2eb87a]/30" />
+                <motion.div animate={{ y: [6, -6, 6] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} className="absolute -bottom-3 -left-3 w-5 h-5 rounded-full bg-[#2eb87a]/20" />
+              </div>
+            </motion.div>
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" custom={1} viewport={{ once: true }} className="order-1 md:order-2">
+              <div className="inline-flex items-center gap-3 mb-6">
+                <span className="text-5xl font-black text-[#2eb87a]">02</span>
+                <div className="h-px flex-1 bg-[#2eb87a]/20" />
+              </div>
+              <div className="inline-block bg-[#2eb87a]/10 text-[#2eb87a] text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
+                Store your solar, use it anytime
+              </div>
+              <h3 className="text-3xl md:text-4xl font-extrabold text-[#1e3a5f] mb-5">Battery Storage</h3>
+              <p className="text-[#3a5070] text-lg leading-relaxed mb-8">
+                Never pay for grid power in the evening again. Store your midday solar energy and run your home at night — with backup power when the grid goes down.
+              </p>
+              <Link to="/contact" className="inline-flex items-center gap-2 font-bold text-[#2eb87a] text-sm group hover:gap-3 transition-all">
+                Get a quote <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SERVICE 03: SOLAR + BATTERY ── light navy background */}
+      <section className="py-24 relative overflow-hidden" style={{ background: "#f0f4fa" }}>
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(30,58,95,0.07) 0%, transparent 70%)", transform: "translate(20%, -20%)" }} />
+        <div className="container mx-auto px-6 max-w-5xl relative z-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <div className="inline-flex items-center gap-3 mb-6">
+                <span className="text-5xl font-black text-[#1e3a5f]">03</span>
+                <div className="h-px flex-1 bg-[#1e3a5f]/20" />
+              </div>
+              <div className="inline-block bg-[#1e3a5f]/10 text-[#1e3a5f] text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
+                The complete energy solution
+              </div>
+              <h3 className="text-3xl md:text-4xl font-extrabold text-[#1e3a5f] mb-5">Solar + Battery Packages</h3>
+              <p className="text-[#3a5070] text-lg leading-relaxed mb-8">
+                Our most popular option. Install both together for maximum savings, a single installation day, and the full combined government rebate — up to $18,500.
+              </p>
+              <Link to="/contact" className="inline-flex items-center gap-2 font-bold text-[#1e3a5f] text-sm group hover:gap-3 transition-all">
+                Get a quote <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </motion.div>
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" custom={1} viewport={{ once: true }} className="flex items-center justify-center">
+              <div className="relative w-64 h-64 rounded-full flex flex-col items-center justify-center" style={{ background: "radial-gradient(circle, rgba(30,58,95,0.10) 0%, rgba(30,58,95,0.03) 70%)", border: "1.5px solid rgba(30,58,95,0.20)" }}>
+                <Zap className="w-12 h-12 text-[#1e3a5f] mb-3" />
+                <div className="text-4xl font-black text-[#1e3a5f]">$18,500</div>
+                <div className="text-sm font-semibold text-[#1e3a5f] mt-2 text-center px-6">Max combined rebate</div>
+                <motion.div animate={{ y: [-8, 8, -8] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-[#1e3a5f]/20" />
+                <motion.div animate={{ y: [6, -6, 6] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} className="absolute -bottom-3 -left-3 w-5 h-5 rounded-full bg-[#1e3a5f]/15" />
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
