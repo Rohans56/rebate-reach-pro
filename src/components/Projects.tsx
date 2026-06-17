@@ -10,6 +10,17 @@ import projectBattery2 from "@/assets/project-battery-2.jpeg";
 
 const projects = [
   {
+    image: "/project-werribee-1.jpg",
+    title: "6.6kW Solar Installation — Werribee",
+    location: "Werribee, VIC",
+    date: "June 2026",
+    specs: "16 x 415W Panels",
+    saving: "$1,800/yr",
+    type: "solar",
+    slug: "solar-installation-werribee-2026",
+    badge: "Latest",
+  },
+  {
     image: projectSolar1,
     title: "6.6kW Rooftop Solar",
     location: "Point Cook, VIC",
@@ -130,6 +141,12 @@ export const Projects = () => (
                   <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full text-xs font-bold text-white" style={{ background: cfg.bg, backdropFilter: "blur(8px)" }}>
                     {cfg.label}
                   </div>
+                  {/* Latest badge */}
+                  {p.badge && (
+                    <div className="absolute top-4 right-14 px-3 py-1.5 rounded-full text-xs font-bold text-white bg-[#2eb87a]">
+                      {p.badge}
+                    </div>
+                  )}
                   {/* Saving badge */}
                   <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full text-xs font-bold text-white bg-black/40 backdrop-blur-sm">
                     Saving {p.saving}

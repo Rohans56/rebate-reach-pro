@@ -258,6 +258,7 @@ export const ProjectCaseStudy = ({ data }: { data: ProjectData }) => {
 // ─── ALL 6 PROJECT PAGES ─────────────────────────────────────────────────────
 
 const allRelated = [
+  { title: "6.6kW Solar — Werribee (June 2026)", slug: "solar-installation-werribee-2026", location: "Werribee, VIC" },
   { title: "6.6kW Rooftop Solar", slug: "solar-installation-point-cook", location: "Point Cook, VIC" },
   { title: "51kWh Battery + 13.3kW Solar", slug: "solar-battery-installation-donnybrook", location: "Donnybrook, VIC" },
   { title: "10kW Domestic Solar", slug: "solar-installation-truganina", location: "Truganina, VIC" },
@@ -420,4 +421,30 @@ export const ProjectCraigiburnSolar = () => <ProjectCaseStudy data={{
   solution: "We designed a 13.3kW system using 32 x 415W tier-1 panels, spread across the home's available north and west-facing roof surfaces for maximum year-round generation. A 13.3kW hybrid inverter was installed — battery-ready for future storage addition. The STC federal rebate reduced the upfront cost by $5,600. Installation was completed in a single day by our licensed team.",
   outcome: "The 13.3kW system generates substantially more power than smaller systems would, with excess generation during peak solar hours available for export or future battery storage. Quarterly bills fell from $720 to approximately $150 — a reduction of $570 per quarter, or $2,280 per year. Payback is estimated at 4 years, after which the system generates approximately $2,300 in savings annually for its remaining 20+ year lifespan.",
   relatedProjects: allRelated.filter(p => p.slug !== "solar-installation-craigieburn").slice(0, 3),
+}} />;
+
+// ── WERRIBEE JUNE 2026 ──
+export const ProjectWerribee2026 = () => <ProjectCaseStudy data={{
+  slug: "solar-installation-werribee-2026",
+  title: "6.6kW Solar Installation — Werribee",
+  metaTitle: "Solar Installation Werribee June 2026 | Case Study | ADSA Australian Solar",
+  metaDesc: "Fresh off the roof — ADSA completed a 6.6kW solar installation in Werribee on 15 June 2026. Real photos, real results. See the full case study.",
+  location: "Werribee, VIC",
+  suburb: "Werribee",
+  suburbSlug: "werribee",
+  date: "15 June 2026",
+  type: "solar",
+  systemSize: "6.6kW",
+  panels: "16 x 415W Tier-1 Panels",
+  inverter: "5kW Hybrid Inverter (battery-ready)",
+  annualSaving: "$1,800/yr",
+  payback: "4 years",
+  quarterlyBillBefore: "$520",
+  quarterlyBillAfter: "$90",
+  rebateReceived: "$2,800",
+  image: "/project-werribee-2.jpg",
+  challenge: "This Werribee family were paying over $520 per quarter in electricity bills — typical for a Melbourne home running ducted heating and cooling year-round. They wanted to reduce their reliance on grid power and take advantage of the current STC rebate before it reduces further. Their roof had good north-facing space across two sections, making it well-suited for a split array layout.",
+  solution: "We designed a 6.6kW system using 16 x 415W tier-1 panels installed across the home's north-facing roof sections — maximising year-round generation across Melbourne's variable seasons. A battery-ready hybrid inverter was installed so the family can add storage in the future without replacing the inverter. The $2,800 STC federal rebate was applied directly at point of sale. Our team completed the full installation on 15 June 2026 in a single day.",
+  outcome: "System commissioned and generating from day one. Based on the family's usage profile and the system's expected output, quarterly bills should drop from $520 to around $90 — saving approximately $1,720 per year. With the rebate applied, payback is estimated at 4 years. The battery-ready inverter means they can add storage whenever they're ready, giving them a clear path to energy independence.",
+  relatedProjects: allRelated.filter(p => p.slug !== "solar-installation-werribee-2026").slice(0, 3),
 }} />;

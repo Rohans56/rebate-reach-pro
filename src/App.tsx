@@ -16,7 +16,7 @@ import { BlogIndex } from "./pages/BlogIndex";
 import { BlogRebates, BlogBattery, BlogCost, BlogFiT, BlogEV, BlogSystemSize, BlogLifespan } from "./pages/BlogPosts";
 import { InstallerWerribee, InstallerTarneit, InstallerPointCook, InstallerCraigieburn, InstallerClydeNorth, InstallerTruganina, InstallerMelton, InstallerCranbourne, InstallerBerwick, InstallerGeelong, InstallerEpping, InstallerRoxburghPark, InstallerSunbury, InstallerCarolineSprings } from "./pages/InstallerSuburbPages";
 import { SolarPanelInstallationPage, SolarBatteryInstallationPage, EVChargerInstallationPage, ResidentialSolarPage, CommercialSolarPage, SolarRebatesVictoriaPage, ElectricalServicesPage } from "./pages/ServicePage";
-import { ProjectPointCookSolar, ProjectDonnybrookBattery, ProjectTruganinaSolar, ProjectWerribeeBattery, ProjectMeltonCombo, ProjectCraigiburnSolar } from "./pages/ProjectPages";
+import { ProjectPointCookSolar, ProjectDonnybrookBattery, ProjectTruganinaSolar, ProjectWerribeeBattery, ProjectMeltonCombo, ProjectCraigiburnSolar, ProjectWerribee2026 } from "./pages/ProjectPages";
 
 const queryClient = new QueryClient();
 
@@ -86,6 +86,7 @@ const App = () => (
             <Route path="/projects/battery-installation-werribee" element={<ProjectWerribeeBattery />} />
             <Route path="/projects/solar-battery-installation-melton" element={<ProjectMeltonCombo />} />
             <Route path="/projects/solar-installation-craigieburn" element={<ProjectCraigiburnSolar />} />
+            <Route path="/projects/solar-installation-werribee-2026" element={<ProjectWerribee2026 />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
