@@ -18,33 +18,20 @@ export const Hero = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "linear-gradient(160deg, #f8fffe 0%, #eef8f5 40%, #fef4f0 100%)" }}>
+    <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden">
 
-      {/* Parallax background Australia shape */}
-      <motion.div style={{ y, opacity }} className="absolute inset-0 pointer-events-none">
+      {/* Hero background — sunset over solar panels */}
+      <div className="absolute inset-0">
         <img
-          src="/adsa-australia.png"
+          src="/hero-bg.jpg"
           alt=""
           aria-hidden="true"
-          className="absolute right-0 top-0 h-full w-auto max-w-[55%] object-contain object-right opacity-[0.07]"
-          style={{ filter: "saturate(0)" }}
+          className="w-full h-full object-cover object-center"
         />
-      </motion.div>
-
-      {/* Ambient colour orbs */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <motion.div
-          animate={{ x: [0, 20, 0], y: [0, -15, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(46,184,122,0.12) 0%, transparent 70%)" }}
-        />
-        <motion.div
-          animate={{ x: [0, -15, 0], y: [0, 20, 0] }}
-          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -bottom-20 -left-20 w-[500px] h-[500px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(242,107,58,0.1) 0%, transparent 70%)" }}
-        />
+        {/* Gradient overlay — very light on right (behind form), soft on left (behind text) */}
+        <div className="absolute inset-0" style={{
+          background: "linear-gradient(105deg, rgba(255,252,248,0.96) 0%, rgba(255,250,245,0.92) 38%, rgba(255,248,240,0.82) 55%, rgba(254,244,234,0.65) 75%, rgba(254,240,228,0.45) 100%)"
+        }} />
       </div>
 
       <div className="container mx-auto px-6 relative z-10 pt-28 pb-16">
@@ -78,7 +65,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-lg text-gray-500 mb-10 max-w-lg leading-relaxed"
+              className="text-lg text-[#3a4f6a] mb-10 max-w-lg leading-relaxed font-medium"
             >
               Join Melbourne homeowners making the switch to solar. Get a free quote, expert advice, and a system tailored to your energy needs.
             </motion.p>
@@ -98,7 +85,7 @@ export const Hero = () => {
               </Link>
               <a
                 href="tel:0469312118"
-                className="flex items-center gap-2 bg-white hover:bg-gray-50 text-[#1e3a5f] font-bold px-8 py-4 rounded-full text-base border border-gray-200 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+                className="flex items-center gap-2 bg-white/80 hover:bg-white backdrop-blur-sm text-[#1e3a5f] font-bold px-8 py-4 rounded-full text-base border border-[#1e3a5f]/15 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
               >
                 <Phone className="w-4 h-4" /> 0469 312 118
               </a>
@@ -109,7 +96,7 @@ export const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-gray-100"
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-[#1e3a5f]/10"
             >
               {stats.map((s, i) => (
                 <motion.div
@@ -119,7 +106,7 @@ export const Hero = () => {
                   transition={{ duration: 0.5, delay: 0.6 + i * 0.08 }}
                 >
                   <div className="text-2xl font-extrabold text-[#1e3a5f]">{s.value}</div>
-                  <div className="text-xs text-gray-400 mt-0.5 font-medium">{s.label}</div>
+                  <div className="text-xs text-[#1e3a5f]/50 mt-0.5 font-medium">{s.label}</div>
                 </motion.div>
               ))}
             </motion.div>
