@@ -94,10 +94,10 @@ const Index = () => {
         {/* EOFY announcement bar */}
         <Link
           to="/offers"
-          className="block w-full text-center py-2.5 px-4 text-sm font-bold text-white transition-opacity hover:opacity-90"
+          className="block w-full text-center py-2.5 px-4 text-sm font-bold text-white transition-opacity hover:opacity-90 relative z-50"
           style={{ background: "linear-gradient(90deg, #1e3a5f 0%, #f26b3a 50%, #1e3a5f 100%)" }}
         >
-          🎉 End of Financial Year Mega Sale — 10.56kW Solar + 30kWh Battery for $8,500. View Offer →
+          End of Financial Year Mega Sale Now Live! — View Offer
         </Link>
         <Header />
         <main>
