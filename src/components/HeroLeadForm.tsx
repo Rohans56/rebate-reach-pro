@@ -90,17 +90,13 @@ export const HeroLeadForm = () => {
     >
       <div className="relative bg-card rounded-3xl shadow-float p-6 md:p-8 border border-border">
         {/* Floating badge */}
-        <motion.div
-          animate={{ y: [-5, 5, -5] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-4 -right-4 bg-gradient-accent text-primary-foreground px-4 py-2 rounded-full shadow-glow text-sm font-semibold"
-        >
-          Free • No Obligation
-        </motion.div>
+        <div className="absolute -top-4 -right-4 bg-[#1e3a5f] text-white px-4 py-2 rounded-full shadow-lg text-sm font-bold">
+          #HurryUp
+        </div>
 
         <div className="mb-6">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-            Find out exactly what you'd save. 🔥
+            Find out exactly what you'd save.
           </h2>
           <p className="text-sm text-muted-foreground flex items-center gap-2">
             <CheckCircle className="w-4 h-4 text-secondary flex-shrink-0" />
