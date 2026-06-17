@@ -100,11 +100,11 @@ export const HeroLeadForm = () => {
 
         <div className="mb-6">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-            Get Your Free Solar Quote
+            Find out exactly what you'd save. 🔥
           </h2>
           <p className="text-sm text-muted-foreground flex items-center gap-2">
-            <CheckCircle className="w-4 h-4 text-secondary" />
-            Response within 24 hours • Save up to $2,300/year
+            <CheckCircle className="w-4 h-4 text-secondary flex-shrink-0" />
+            Free · No obligation · Response within 24 hours
           </p>
         </div>
 
@@ -180,14 +180,14 @@ export const HeroLeadForm = () => {
               "Sending..."
             ) : (
               <>
-                Get My Free Quote
+                Show Me My Savings →
                 <ArrowRight className="w-5 h-5" />
               </>
             )}
           </Button>
           <p className="text-xs text-center text-muted-foreground flex items-center justify-center gap-1">
             <Shield className="w-3 h-3" />
-            No spam. Your information is 100% secure.
+            Joined by 500+ Melbourne families · 100% free, no pressure
           </p>
         </form>
       </div>
