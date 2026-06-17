@@ -8,7 +8,7 @@ const commonFaq = (suburb: string) => [
   },
   {
     q: `What rebates are available for ${suburb} homeowners in 2025?`,
-    a: `${suburb} homeowners can access the federal STC solar rebate (up to $3,500 off panels) and the Cheaper Home Batteries Program ($330 per kWh off battery storage, up to $5,000 for a 13.5kWh battery). Combined, eligible households can save up to $18,500.`
+    a: `${suburb} homeowners can access the federal STC solar rebate (up to $2,800 off panels) and the Cheaper Home Batteries Program ($330 per kWh off battery storage, up to $5,000 for a 13.5kWh battery). Combined, eligible households can save up to $18,500.`
   },
   {
     q: `How long does solar installation take in ${suburb}?`,

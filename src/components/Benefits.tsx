@@ -107,7 +107,7 @@ export const Benefits = () => {
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" custom={1} viewport={{ once: true }} className="flex items-center justify-center">
               <div className="relative w-64 h-64 rounded-full flex flex-col items-center justify-center" style={{ background: "radial-gradient(circle, rgba(242,107,58,0.10) 0%, rgba(242,107,58,0.03) 70%)", border: "1.5px solid rgba(242,107,58,0.20)" }}>
                 <Sun className="w-12 h-12 text-[#f26b3a] mb-3" />
-                <div className="text-5xl font-black text-[#f26b3a]">$3,500</div>
+                <div className="text-5xl font-black text-[#f26b3a]">$2,800</div>
                 <div className="text-sm font-semibold text-[#1e3a5f] mt-2 text-center px-6">Solar rebate available</div>
                 <motion.div animate={{ y: [-8, 8, -8] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-[#f26b3a]/30" />
                 <motion.div animate={{ y: [6, -6, 6] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} className="absolute -bottom-3 -left-3 w-5 h-5 rounded-full bg-[#f26b3a]/20" />
