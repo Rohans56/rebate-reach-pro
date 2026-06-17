@@ -61,10 +61,21 @@ export const Benefits = () => {
     <div ref={sectionRef}>
 
       {/* ── SECTION 1: WHAT WE OFFER ── seamless flow from hero */}
-      <section className="py-28 relative overflow-hidden" style={{ background: "linear-gradient(180deg, #fef4f0 0%, #ffffff 100%)" }}>
-        <motion.div style={{ y: bgY }} className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full" style={{ background: "radial-gradient(circle, rgba(46,184,122,0.07) 0%, transparent 70%)", transform: "translate(30%, -30%)" }} />
-        </motion.div>
+      <section className="py-28 relative overflow-hidden">
+
+        {/* Melbourne aerial — solar panels visible on rooftops */}
+        <div className="absolute inset-0">
+          <img
+            src="/melbourne-aerial.jpg"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Light overlay — keeps aerial visible but content readable */}
+          <div className="absolute inset-0" style={{
+            background: "linear-gradient(180deg, rgba(255,255,255,0.93) 0%, rgba(255,255,255,0.90) 40%, rgba(255,255,255,0.93) 100%)"
+          }} />
+        </div>
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
