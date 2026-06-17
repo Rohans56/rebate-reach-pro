@@ -1,155 +1,295 @@
-import { motion } from "framer-motion";
-import { Sun, Battery, DollarSign, Shield, Clock, Award, Leaf, TrendingUp, ArrowRight } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { ArrowRight, Sun, Battery, Zap, Shield, TrendingUp, Leaf } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const benefits = [
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] },
+  }),
+};
+
+const services = [
   {
-    icon: DollarSign,
-    title: "Up to $3,500 Solar Rebate",
-    description: "Government STC rebates can reduce your upfront cost by thousands. A typical 6.6kW system saves $1,500–$3,500.",
-    highlight: "$3,500",
-    color: "primary",
+    icon: Sun,
+    number: "01",
+    title: "Solar Panels",
+    sub: "High-efficiency photovoltaic panels",
+    body: "Premium tier-1 panels with a 25-year performance warranty — sized perfectly for your roof, your usage, and your goals. We don't do one-size-fits-all.",
+    stat: "$3,500",
+    statLabel: "Solar rebate available",
+    color: "#f26b3a",
   },
   {
     icon: Battery,
-    title: "$300–$370 per kWh Battery Rebate",
-    description: "Under the Cheaper Home Batteries Program, a 10kWh battery can receive ~$3,700 off, and 13.5kWh up to $5,000.",
-    highlight: "$5,000",
-    color: "secondary",
+    number: "02",
+    title: "Battery Storage",
+    sub: "Store your solar, use it anytime",
+    body: "Never pay for grid power in the evening again. Store your midday solar energy and run your home at night — with backup power when the grid goes down.",
+    stat: "$5,000",
+    statLabel: "Battery rebate available",
+    color: "#2eb87a",
   },
   {
-    icon: TrendingUp,
-    title: "Save $1,100–$2,300 Per Year",
-    description: "Solar + battery combo delivers massive annual bill reductions. Many Victorian homes save $1,000+ every year.",
-    highlight: "$2,300/yr",
-    color: "primary",
-  },
-  {
-    icon: Clock,
-    title: "3–5 Year Payback Period",
-    description: "With rebates and energy savings combined, most systems pay for themselves in just 3–5 years.",
-    highlight: "3-5 Years",
-    color: "secondary",
-  },
-  {
-    icon: Shield,
-    title: "25 Year Panel Warranty",
-    description: "Premium tier-1 panels with industry-leading warranties. Your investment is protected for decades.",
-    highlight: "25 Years",
-    color: "primary",
-  },
-  {
-    icon: Leaf,
-    title: "Reduce Carbon Footprint",
-    description: "A typical solar system prevents 4+ tonnes of CO2 emissions annually. Power your home sustainably.",
-    highlight: "4+ Tonnes",
-    color: "secondary",
+    icon: Zap,
+    number: "03",
+    title: "Solar + Battery Packages",
+    sub: "The complete energy solution",
+    body: "Our most popular option. Install both together for maximum savings, a single installation day, and the full combined government rebate — up to $18,500.",
+    stat: "$18,500",
+    statLabel: "Max combined rebate",
+    color: "#1e3a5f",
   },
 ];
 
+const reasons = [
+  { icon: Shield, title: "CEC Accredited", body: "Every installation meets Clean Energy Council standards — mandatory for accessing government rebates." },
+  { icon: TrendingUp, title: "3–5 Year Payback", body: "With current rebates and electricity prices, most systems pay for themselves faster than ever." },
+  { icon: Leaf, title: "4+ Tonnes CO₂ Saved", body: "A typical household solar system prevents over 4 tonnes of carbon emissions every single year." },
+  { icon: Sun, title: "25-Year Warranty", body: "Tier-1 panels backed by industry-leading performance warranties. Your investment is protected for decades." },
+];
+
 export const Benefits = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, -60]);
+
   return (
-    <section id="benefits" className="py-20 md:py-32 bg-background relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-solar-mint/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-solar-coral-light/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-      </div>
+    <div ref={sectionRef}>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="h-px w-8 bg-primary" />
-            <span className="text-sm font-semibold text-primary uppercase tracking-widest">What we offer</span>
-            <div className="h-px w-8 bg-primary" />
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            We provide wide range of{" "}
-            <span className="text-gradient-primary">solar services</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Join thousands of Victorians who are cutting their power bills and enjoying government rebates while they last.
-          </p>
+      {/* ── SECTION 1: WHAT WE OFFER ── seamless flow from hero */}
+      <section className="py-28 relative overflow-hidden" style={{ background: "linear-gradient(180deg, #fef4f0 0%, #ffffff 100%)" }}>
+        <motion.div style={{ y: bgY }} className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full" style={{ background: "radial-gradient(circle, rgba(46,184,122,0.07) 0%, transparent 70%)", transform: "translate(30%, -30%)" }} />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {benefits.map((benefit, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group bg-card rounded-2xl p-6 md:p-8 shadow-card hover:shadow-float transition-all duration-500 border border-border hover:border-primary/20 relative overflow-hidden"
-            >
-              {/* Hover gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
-              <div className="relative z-10">
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 ${
-                  benefit.color === "primary" 
-                    ? "bg-primary/10 group-hover:bg-primary" 
-                    : "bg-secondary/10 group-hover:bg-secondary"
-                }`}>
-                  <benefit.icon className={`w-7 h-7 transition-colors duration-300 ${
-                    benefit.color === "primary"
-                      ? "text-primary group-hover:text-primary-foreground"
-                      : "text-secondary group-hover:text-secondary-foreground"
-                  }`} />
-                </div>
-                <div className={`inline-block px-3 py-1 rounded-full text-sm font-bold mb-3 ${
-                  benefit.color === "primary"
-                    ? "bg-primary/10 text-primary"
-                    : "bg-secondary/10 text-secondary"
-                }`}>
-                  {benefit.highlight}
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{benefit.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Urgency Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16 bg-gradient-to-r from-solar-teal to-solar-teal/80 rounded-3xl p-8 md:p-12 relative overflow-hidden"
-        >
-          {/* Decorative elements */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          
-          <div className="relative z-10 text-center">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Award className="w-6 h-6 text-white/80" />
-              <span className="text-sm font-semibold text-white/80 uppercase tracking-wider">
-                Limited Time
-              </span>
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="max-w-2xl mb-20"
+          >
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-px w-10 bg-[#f26b3a]" />
+              <span className="text-xs font-bold text-[#f26b3a] uppercase tracking-[0.2em]">What we do</span>
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
-              Rebates Are Highest Now — They Decline Each Year
-            </h3>
-            <p className="text-white/80 max-w-2xl mx-auto mb-6">
-              The Victorian solar rebate and Federal battery subsidy decrease annually. Lock in maximum savings by acting now. 
-              Maximum rebate cap up to $18,500 per eligible household.
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#1e3a5f] leading-tight mb-5">
+              Everything you need to go solar — done properly.
+            </h2>
+            <p className="text-gray-500 text-lg leading-relaxed">
+              From the initial call to the day your system switches on, ADSA handles everything — design, installation, rebate paperwork, and grid connection.
             </p>
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-solar-teal font-semibold rounded-xl hover:bg-white/90 transition-colors group"
-            >
-              Calculate Your Savings Now
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+          </motion.div>
+
+          {/* Services — alternating layout, no cards */}
+          <div className="space-y-20">
+            {services.map((s, i) => (
+              <motion.div
+                key={s.number}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                custom={i}
+                viewport={{ once: true }}
+                className={`grid md:grid-cols-2 gap-12 items-center ${i % 2 === 1 ? "md:grid-flow-dense" : ""}`}
+              >
+                {/* Content side */}
+                <div className={i % 2 === 1 ? "md:col-start-2" : ""}>
+                  <div className="flex items-baseline gap-4 mb-4">
+                    <span className="text-6xl font-black" style={{ color: s.color, opacity: 0.15 }}>{s.number}</span>
+                    <span className="text-sm font-semibold text-gray-400 uppercase tracking-wider">{s.sub}</span>
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-extrabold text-[#1e3a5f] mb-4">{s.title}</h3>
+                  <p className="text-gray-500 text-lg leading-relaxed mb-8">{s.body}</p>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-2 font-bold text-sm group"
+                    style={{ color: s.color }}
+                  >
+                    Get a quote <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+
+                {/* Stat side — large ambient number, no box */}
+                <div className={`flex items-center justify-center ${i % 2 === 1 ? "md:col-start-1" : ""}`}>
+                  <div className="relative">
+                    {/* Ambient circle */}
+                    <div className="w-64 h-64 rounded-full flex flex-col items-center justify-center" style={{ background: `radial-gradient(circle, ${s.color}10 0%, ${s.color}04 70%)`, border: `1px solid ${s.color}15` }}>
+                      <s.icon className="w-10 h-10 mb-4" style={{ color: s.color }} />
+                      <div className="text-5xl font-black" style={{ color: s.color }}>{s.stat}</div>
+                      <div className="text-xs font-semibold text-gray-400 mt-2 text-center px-8">{s.statLabel}</div>
+                    </div>
+                    {/* Floating accent dot */}
+                    <motion.div
+                      animate={{ y: [-8, 8, -8] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute -top-4 -right-4 w-8 h-8 rounded-full"
+                      style={{ background: s.color, opacity: 0.3 }}
+                    />
+                    <motion.div
+                      animate={{ y: [6, -6, 6] }}
+                      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute -bottom-3 -left-3 w-5 h-5 rounded-full"
+                      style={{ background: s.color, opacity: 0.2 }}
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
-      </div>
-    </section>
+        </div>
+      </section>
+
+      {/* ── SECTION 2: WHY CHOOSE US ── dark, immersive */}
+      <section className="py-28 relative overflow-hidden" style={{ background: "#1e3a5f" }}>
+        {/* Subtle texture */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(242,107,58,0.1) 0%, transparent 60%)", transform: "translate(30%, -40%)" }} />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(46,184,122,0.08) 0%, transparent 60%)", transform: "translate(-30%, 30%)" }} />
+
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="max-w-2xl mb-20"
+          >
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-px w-10 bg-[#f26b3a]" />
+              <span className="text-xs font-bold text-[#f26b3a] uppercase tracking-[0.2em]">Why ADSA</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-5">
+              We're not just installers.<br />We're your energy partners.
+            </h2>
+            <p className="text-white/60 text-lg leading-relaxed">
+              From the first call to decades of savings — ADSA is with you every step. Honest advice, zero pressure, and support that actually shows up.
+            </p>
+          </motion.div>
+
+          {/* Reasons — horizontal flow, no boxes */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-0">
+            {reasons.map((r, i) => (
+              <motion.div
+                key={r.title}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                custom={i}
+                viewport={{ once: true }}
+                className="py-10 pr-10 border-b border-white/10 sm:border-b-0 sm:border-r last:border-r-0"
+              >
+                <r.icon className="w-7 h-7 text-[#f26b3a] mb-5" />
+                <h3 className="text-lg font-bold text-white mb-3">{r.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{r.body}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Big CTA — inline, no box */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-20 pt-16 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-8"
+          >
+            <div>
+              <div className="text-4xl md:text-5xl font-black text-white mb-2">
+                Rebates end <span className="text-[#f26b3a]">June 30.</span>
+              </div>
+              <p className="text-white/50 text-lg">Government rebates decrease every year. The sooner you act, the more you save.</p>
+            </div>
+            <Link
+              to="/contact"
+              className="flex-shrink-0 flex items-center gap-3 bg-[#f26b3a] hover:bg-[#e05a2a] text-white font-bold px-10 py-5 rounded-full text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-[#f26b3a]/30 hover:-translate-y-0.5 group"
+            >
+              Claim Your Rebate
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── SECTION 3: SOCIAL PROOF ── light, airy */}
+      <section className="py-28" style={{ background: "#f8fffe" }}>
+        <div className="container mx-auto px-6">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center gap-3 mb-5">
+              <div className="h-px w-10 bg-[#2eb87a]" />
+              <span className="text-xs font-bold text-[#2eb87a] uppercase tracking-[0.2em]">Real results</span>
+              <div className="h-px w-10 bg-[#2eb87a]" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#1e3a5f] mb-4">
+              Trusted by Melbourne homeowners.
+            </h2>
+            <p className="text-gray-400 text-lg max-w-xl mx-auto">
+              500+ installations across Victoria. Here's what our customers actually say.
+            </p>
+          </motion.div>
+
+          {/* Testimonials — horizontal strip, no cards */}
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              { name: "Sarah M.", location: "Point Cook, VIC", system: "6.6kW Solar + 10kWh Battery", saving: "$1,900/yr", quote: "Our electricity bill went from $650 quarterly to just $180. The team handled everything including the rebate paperwork. Couldn't be happier." },
+              { name: "James & Lisa T.", location: "Tarneit, VIC", system: "10kW Solar System", saving: "$2,100/yr", quote: "We were skeptical about the savings claims but our first bill proved everything. Amazing installation quality and the after-sales support is excellent." },
+              { name: "Michael P.", location: "Werribee, VIC", system: "8kW Solar + 13.5kWh Battery", saving: "$2,300/yr", quote: "The whole process was seamless. ADSA helped us with all the rebate paperwork and we got nearly $8,000 off our solar and battery system." },
+            ].map((t, i) => (
+              <motion.div
+                key={t.name}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                custom={i}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                {/* Giant quote mark — decorative, not a box */}
+                <div className="text-8xl font-black text-[#2eb87a] leading-none mb-4" style={{ opacity: 0.12 }}>"</div>
+                <p className="text-gray-600 text-lg leading-relaxed mb-6 -mt-8">{t.quote}</p>
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, j) => (
+                    <span key={j} className="text-[#f97316] text-lg">★</span>
+                  ))}
+                </div>
+                <div className="border-t border-gray-100 pt-4">
+                  <div className="font-bold text-[#1e3a5f]">{t.name}</div>
+                  <div className="text-sm text-gray-400">{t.location} · {t.system}</div>
+                  <div className="text-sm font-bold text-[#2eb87a] mt-1">Saving {t.saving}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Trust logos strip */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-20 pt-16 border-t border-gray-100 flex flex-wrap items-center justify-center gap-10"
+          >
+            <span className="text-xs font-bold text-gray-300 uppercase tracking-widest">Trusted & Accredited</span>
+            {["CEC Accredited Installer", "Solar Victoria", "NETC Approved", "Fully Licensed & Insured", "25-Year Warranty"].map((badge) => (
+              <div key={badge} className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-[#2eb87a]" />
+                <span className="text-sm font-semibold text-gray-400">{badge}</span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+    </div>
   );
 };
