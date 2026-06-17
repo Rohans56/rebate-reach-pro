@@ -58,7 +58,7 @@ export const Hero = () => {
             >
               Melbourne's Trusted<br />
               <span style={{ background: "linear-gradient(135deg, #f26b3a, #f97316)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                Solar & Battery Experts.
+                Solar & Battery Installers.
               </span>
             </motion.h1>
 
@@ -68,7 +68,7 @@ export const Hero = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-lg text-[#2d4a6a] mb-10 max-w-lg leading-relaxed font-medium"
             >
-              Join Melbourne homeowners making the switch to solar. Get a free quote, expert advice, and a system tailored to your energy needs.
+              Quality solar panels, battery storage, EV chargers and electrical services. Expert installation, honest advice and support with available rebates.
             </motion.p>
 
             <motion.div
