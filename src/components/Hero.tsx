@@ -68,9 +68,9 @@ export const Hero = () => {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#1e3a5f] leading-[1.05] mb-6 tracking-tight"
             >
-              Stop paying<br />
+              Melbourne's Trusted<br />
               <span style={{ background: "linear-gradient(135deg, #f26b3a, #f97316)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                their prices.
+                Solar & Battery Experts.
               </span>
             </motion.h1>
 
@@ -78,26 +78,10 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-lg text-gray-500 mb-6 max-w-lg leading-relaxed"
+              className="text-lg text-gray-500 mb-10 max-w-lg leading-relaxed"
             >
-              Victorian families are cutting their power bills by up to{" "}
-              <span className="text-[#1e3a5f] font-semibold">$2,300 every year</span> with solar + battery —
-              and the government is covering up to{" "}
-              <span className="text-[#1e3a5f] font-semibold">$18,500</span> of the cost.
+              Join Melbourne homeowners making the switch to solar. Get a free quote, expert advice, and a system tailored to your energy needs.
             </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="flex items-center gap-3 mb-10 p-4 rounded-2xl"
-              style={{ background: "rgba(242,107,58,0.06)", border: "1px solid rgba(242,107,58,0.12)" }}
-            >
-              <div className="w-2.5 h-2.5 rounded-full bg-[#f26b3a] flex-shrink-0 animate-pulse" />
-              <p className="text-sm font-semibold text-[#1e3a5f]">
-                ⚡ Rebates decrease every year — <span className="text-[#f26b3a]">2025 is the highest they'll ever be.</span> Act before June 30.
-              </p>
-            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
