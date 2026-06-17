@@ -7,7 +7,6 @@ import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { StickyCTA } from "@/components/StickyCTA";
 import { LeadPopup } from "@/components/LeadPopup";
-import { EOFYSection } from "@/components/EOFYSection";
 
 const Index = () => {
   return (
@@ -91,10 +90,18 @@ const Index = () => {
       </Helmet>
 
       <div className="min-h-screen">
+        {/* EOFY Flyer — pinned to very top above everything */}
+        <a href="/contact" className="block w-full">
+          <img
+            src="/eofy-sale.png"
+            alt="ADSA Australian Solar EOFY Mega Sale — 10.56kW Solar + 30kWh Battery for $8,500. Ends June 30. Call 0469 312 118"
+            className="w-full block"
+            style={{ maxHeight: "100vh", objectFit: "contain", objectPosition: "top", background: "#c8e6f0" }}
+          />
+        </a>
         <Header />
         <main>
           <Hero />
-          <EOFYSection />
           <Benefits />
           <ContactForm />
           <Testimonials />
