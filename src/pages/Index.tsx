@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Benefits } from "@/components/Benefits";
 import { ContactForm } from "@/components/ContactForm";
+import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { Footer } from "@/components/Footer";
 import { StickyCTA } from "@/components/StickyCTA";
 import { LeadPopup } from "@/components/LeadPopup";
@@ -11,10 +12,10 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>ADSA Solar | Solar Panel & Battery Installation Melbourne | Save up to $2,300/year</title>
+        <title>Solar Installers Melbourne | Solar Panels, Batteries & Electrical Services | ADSA</title>
         <meta 
           name="description" 
-          content="Melbourne's trusted solar & battery installers. Cut power bills by up to $2,300/year with government rebates up to $18,500. Free quotes & 3-5 year payback. CEC Accredited." 
+          content="ADSA Australian Solar — CEC accredited solar installers across Melbourne and Victoria. Solar panels, battery storage, EV chargers and electrical services. Government rebates up to $18,500. Free quote." 
         />
         <meta name="keywords" content="solar panels Melbourne, solar panel installation Victoria, solar battery installation Australia, solar battery rebates, solar panel rebates Victoria, solar + battery systems savings, government solar rebate 2025" />
         <link rel="canonical" href="https://adsasolar.com.au" />
@@ -92,6 +93,7 @@ const Index = () => {
         <Header />
         <main>
           <Hero />
+          <WhyChooseUs />
           <Benefits />
           <ContactForm />
         </main>

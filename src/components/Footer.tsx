@@ -3,18 +3,22 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/adsa-logo.png";
 
 const suburbLinks = [
-  { label: "Solar Panels Werribee", slug: "werribee" },
-  { label: "Solar Panels Tarneit", slug: "tarneit" },
-  { label: "Solar Panels Point Cook", slug: "point-cook" },
-  { label: "Solar Panels Craigieburn", slug: "craigieburn" },
-  { label: "Solar Panels Clyde North", slug: "clyde-north" },
-  { label: "Solar Panels Truganina", slug: "truganina" },
-  { label: "Solar Panels Melton", slug: "melton" },
-  { label: "Solar Panels Hoppers Crossing", slug: "hoppers-crossing" },
-  { label: "Solar Panels Wyndham Vale", slug: "wyndham-vale" },
-  { label: "Solar Panels Donnybrook", slug: "donnybrook" },
-  { label: "Solar Panels Pakenham", slug: "pakenham" },
-  { label: "Solar Panels Officer", slug: "officer" },
+  { label: "Solar Installers Werribee", slug: "werribee", type: "installers" },
+  { label: "Solar Installers Tarneit", slug: "tarneit", type: "installers" },
+  { label: "Solar Installers Point Cook", slug: "point-cook", type: "installers" },
+  { label: "Solar Installers Craigieburn", slug: "craigieburn", type: "installers" },
+  { label: "Solar Installers Clyde North", slug: "clyde-north", type: "installers" },
+  { label: "Solar Installers Melton", slug: "melton", type: "installers" },
+  { label: "Solar Installers Cranbourne", slug: "cranbourne", type: "installers" },
+  { label: "Solar Installers Berwick", slug: "berwick", type: "installers" },
+  { label: "Solar Installers Geelong", slug: "geelong", type: "installers" },
+  { label: "Solar Installers Epping", slug: "epping", type: "installers" },
+  { label: "Solar Panels Truganina", slug: "truganina", type: "panels" },
+  { label: "Solar Panels Hoppers Crossing", slug: "hoppers-crossing", type: "panels" },
+  { label: "Solar Panels Wyndham Vale", slug: "wyndham-vale", type: "panels" },
+  { label: "Solar Panels Donnybrook", slug: "donnybrook", type: "panels" },
+  { label: "Solar Panels Pakenham", slug: "pakenham", type: "panels" },
+  { label: "Solar Panels Officer", slug: "officer", type: "panels" },
 ];
 
 export const Footer = () => {
@@ -51,11 +55,13 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-bold mb-4">Our Services</h4>
             <ul className="space-y-3 text-white/70">
-              <li><Link to="/services" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Solar Panel Installation <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Battery Storage Systems <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
-              <li><Link to="/services" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Solar + Battery Packages <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
-              <li><Link to="/contact" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Rebate Assistance <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
-              <li><Link to="/contact" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Commercial Solar <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
+              <li><Link to="/solar-panel-installation" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Solar Panel Installation <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
+              <li><Link to="/solar-battery-installation" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Battery Storage Installation <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
+              <li><Link to="/ev-charger-installation" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">EV Charger Installation <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
+              <li><Link to="/residential-solar" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Residential Solar <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
+              <li><Link to="/commercial-solar" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Commercial Solar <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
+              <li><Link to="/solar-rebates-victoria" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Solar Rebates Victoria <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
+              <li><Link to="/electrical-services" className="hover:text-primary transition-colors inline-flex items-center gap-1 group">Electrical Services <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" /></Link></li>
             </ul>
           </div>
 
@@ -113,10 +119,10 @@ export const Footer = () => {
             Areas We Service
           </h4>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-3">
-            {suburbLinks.map(({ label, slug }) => (
+            {suburbLinks.map(({ label, slug, type }) => (
               <Link
-                key={slug}
-                to={`/solar-panels-${slug}`}
+                key={slug + type}
+                to={`/solar-${type === "installers" ? "installers" : "panels"}-${slug}`}
                 className="text-sm text-white/60 hover:text-primary transition-colors inline-flex items-center gap-1 group"
               >
                 <ArrowRight className="w-3 h-3 flex-shrink-0 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />

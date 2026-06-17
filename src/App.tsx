@@ -13,6 +13,8 @@ import NotFound from "./pages/NotFound";
 import { WerribeeSolar, TarneitSolar, PointCookSolar, CraigiburnSolar, ClydeNorthSolar, TruginanaSolar, MeltonSolar, HoppersCrossingSolar, WyndhamValeSolar, DonnybrookSolar, PakenhamSolar, OfficerSolar } from "./pages/SuburbPages";
 import { BlogIndex } from "./pages/BlogIndex";
 import { BlogRebates, BlogBattery, BlogCost, BlogFiT, BlogEV, BlogSystemSize, BlogLifespan } from "./pages/BlogPosts";
+import { InstallerWerribee, InstallerTarneit, InstallerPointCook, InstallerCraigieburn, InstallerClydeNorth, InstallerTruganina, InstallerMelton, InstallerCranbourne, InstallerBerwick, InstallerGeelong, InstallerEpping, InstallerRoxburghPark, InstallerSunbury, InstallerCarolineSprings } from "./pages/InstallerSuburbPages";
+import { SolarPanelInstallationPage, SolarBatteryInstallationPage, EVChargerInstallationPage, ResidentialSolarPage, CommercialSolarPage, SolarRebatesVictoriaPage, ElectricalServicesPage } from "./pages/ServicePage";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +53,29 @@ const App = () => (
             <Route path="/blog/ev-charger-solar-melbourne-guide" element={<BlogEV />} />
             <Route path="/blog/6-6kw-vs-10kw-solar-system-melbourne" element={<BlogSystemSize />} />
             <Route path="/blog/how-long-do-solar-panels-last" element={<BlogLifespan />} />
+            {/* Solar Installers suburb pages */}
+            <Route path="/solar-installers-werribee" element={<InstallerWerribee />} />
+            <Route path="/solar-installers-tarneit" element={<InstallerTarneit />} />
+            <Route path="/solar-installers-point-cook" element={<InstallerPointCook />} />
+            <Route path="/solar-installers-craigieburn" element={<InstallerCraigieburn />} />
+            <Route path="/solar-installers-clyde-north" element={<InstallerClydeNorth />} />
+            <Route path="/solar-installers-truganina" element={<InstallerTruganina />} />
+            <Route path="/solar-installers-melton" element={<InstallerMelton />} />
+            <Route path="/solar-installers-cranbourne" element={<InstallerCranbourne />} />
+            <Route path="/solar-installers-berwick" element={<InstallerBerwick />} />
+            <Route path="/solar-installers-geelong" element={<InstallerGeelong />} />
+            <Route path="/solar-installers-epping" element={<InstallerEpping />} />
+            <Route path="/solar-installers-roxburgh-park" element={<InstallerRoxburghPark />} />
+            <Route path="/solar-installers-sunbury" element={<InstallerSunbury />} />
+            <Route path="/solar-installers-caroline-springs" element={<InstallerCarolineSprings />} />
+            {/* Service pages */}
+            <Route path="/solar-panel-installation" element={<SolarPanelInstallationPage />} />
+            <Route path="/solar-battery-installation" element={<SolarBatteryInstallationPage />} />
+            <Route path="/ev-charger-installation" element={<EVChargerInstallationPage />} />
+            <Route path="/residential-solar" element={<ResidentialSolarPage />} />
+            <Route path="/commercial-solar" element={<CommercialSolarPage />} />
+            <Route path="/solar-rebates-victoria" element={<SolarRebatesVictoriaPage />} />
+            <Route path="/electrical-services" element={<ElectricalServicesPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
