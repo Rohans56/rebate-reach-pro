@@ -201,15 +201,15 @@ export const Benefits = () => {
           >
             <div>
               <div className="text-4xl md:text-5xl font-black text-white mb-2">
-                Rebates end <span className="text-[#f26b3a]">June 30.</span>
+                Contact us for End of Financial Year <span className="text-[#f26b3a]">discounts.</span>
               </div>
-              <p className="text-white/50 text-lg">Government rebates decrease every year. The sooner you act, the more you save.</p>
+              <p className="text-white/50 text-lg">Take advantage of our End of Financial Year discounts. Get in touch today for a free quote.</p>
             </div>
             <Link
               to="/contact"
               className="flex-shrink-0 flex items-center gap-3 bg-[#f26b3a] hover:bg-[#e05a2a] text-white font-bold px-10 py-5 rounded-full text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-[#f26b3a]/30 hover:-translate-y-0.5 group"
             >
-              Claim Your Rebate
+              Contact Us Today
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </motion.div>
