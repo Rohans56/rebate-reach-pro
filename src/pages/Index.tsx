@@ -7,6 +7,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { StickyCTA } from "@/components/StickyCTA";
 import { LeadPopup } from "@/components/LeadPopup";
+import { EOFYSection } from "@/components/EOFYSection";
 
 const Index = () => {
   return (
@@ -93,6 +94,7 @@ const Index = () => {
         <Header />
         <main>
           <Hero />
+          <EOFYSection />
           <Benefits />
           <ContactForm />
           <Testimonials />
