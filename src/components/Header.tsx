@@ -25,11 +25,22 @@ export const Header = () => {
 
   return (
     <>
+      {/* EOFY Announcement Bar — inside fixed header so it's always clickable */}
+      <div className="fixed top-0 left-0 right-0 z-[60]">
+        <Link
+          to="/offers"
+          className="block w-full text-center py-2.5 px-4 text-sm font-bold text-white hover:opacity-90 transition-opacity"
+          style={{ background: "linear-gradient(90deg, #1e3a5f 0%, #f26b3a 50%, #1e3a5f 100%)" }}
+        >
+          End of Financial Year Mega Sale Now Live! — View Offer
+        </Link>
+      </div>
+
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed left-0 right-0 z-50 transition-all duration-500 top-[40px] ${
           isScrolled
             ? "bg-white/95 backdrop-blur-xl shadow-sm py-3"
             : "bg-transparent py-6"
