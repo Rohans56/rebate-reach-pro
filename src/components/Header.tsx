@@ -53,7 +53,7 @@ export const Header = () => {
               <img
                 src="/adsa-logo-new.png"
                 alt="ADSA Australian Solar"
-                className="h-28 md:h-32 w-auto"
+                className="h-12 md:h-14 w-auto"
               />
             </Link>
 
