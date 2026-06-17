@@ -147,8 +147,16 @@ export const Benefits = () => {
 
       {/* ── SECTION 2: WHY CHOOSE US ── dark, immersive */}
       <section className="py-28 relative overflow-hidden" style={{ background: "#1e3a5f" }}>
-        {/* Subtle texture */}
-        <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
+        {/* House with solar panels — subtle background */}
+        <div className="absolute inset-0">
+          <img
+            src="/install-2.jpg"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-center opacity-15"
+          />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(30,58,95,0.97) 0%, rgba(30,58,95,0.85) 60%, rgba(30,58,95,0.95) 100%)" }} />
+        </div>
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(242,107,58,0.1) 0%, transparent 60%)", transform: "translate(30%, -40%)" }} />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(46,184,122,0.08) 0%, transparent 60%)", transform: "translate(-30%, 30%)" }} />
 

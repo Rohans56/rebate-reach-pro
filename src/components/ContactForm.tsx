@@ -90,8 +90,20 @@ export const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-32 bg-gradient-hero">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="relative py-20 md:py-32 overflow-hidden">
+      {/* Installer on roof — background image */}
+      <div className="absolute inset-0">
+        <img
+          src="/install-3.jpg"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0" style={{
+          background: "linear-gradient(135deg, rgba(46,184,122,0.95) 0%, rgba(30,58,95,0.92) 100%)"
+        }} />
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Info */}
           <motion.div
