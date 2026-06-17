@@ -1,6 +1,5 @@
 import { Mail, MapPin, Phone, Facebook, Instagram, Linkedin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/adsa-logo.png";
 
 const suburbLinks = [
   { label: "Solar Installers Werribee", slug: "werribee", type: "installers" },
@@ -34,7 +33,7 @@ export const Footer = () => {
 
           {/* Brand */}
           <div>
-            <img src={logo} alt="ADSA Solar" className="h-14 mb-4" />
+            <img src="/adsa-logo-new.png" alt="ADSA Australian Solar" className="h-14 mb-4" />
             <p className="text-white/70 mb-6 leading-relaxed">
               Your trusted solar and battery installation experts. Helping Australians save thousands on electricity.
             </p>
