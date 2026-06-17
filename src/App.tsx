@@ -15,6 +15,7 @@ import { BlogIndex } from "./pages/BlogIndex";
 import { BlogRebates, BlogBattery, BlogCost, BlogFiT, BlogEV, BlogSystemSize, BlogLifespan } from "./pages/BlogPosts";
 import { InstallerWerribee, InstallerTarneit, InstallerPointCook, InstallerCraigieburn, InstallerClydeNorth, InstallerTruganina, InstallerMelton, InstallerCranbourne, InstallerBerwick, InstallerGeelong, InstallerEpping, InstallerRoxburghPark, InstallerSunbury, InstallerCarolineSprings } from "./pages/InstallerSuburbPages";
 import { SolarPanelInstallationPage, SolarBatteryInstallationPage, EVChargerInstallationPage, ResidentialSolarPage, CommercialSolarPage, SolarRebatesVictoriaPage, ElectricalServicesPage } from "./pages/ServicePage";
+import { ProjectPointCookSolar, ProjectDonnybrookBattery, ProjectTruganinaSolar, ProjectWerribeeBattery, ProjectMeltonCombo, ProjectCraigiburnSolar } from "./pages/ProjectPages";
 
 const queryClient = new QueryClient();
 
@@ -76,6 +77,13 @@ const App = () => (
             <Route path="/commercial-solar" element={<CommercialSolarPage />} />
             <Route path="/solar-rebates-victoria" element={<SolarRebatesVictoriaPage />} />
             <Route path="/electrical-services" element={<ElectricalServicesPage />} />
+            {/* Project case studies */}
+            <Route path="/projects/solar-installation-point-cook" element={<ProjectPointCookSolar />} />
+            <Route path="/projects/solar-battery-installation-donnybrook" element={<ProjectDonnybrookBattery />} />
+            <Route path="/projects/solar-installation-truganina" element={<ProjectTruganinaSolar />} />
+            <Route path="/projects/battery-installation-werribee" element={<ProjectWerribeeBattery />} />
+            <Route path="/projects/solar-battery-installation-melton" element={<ProjectMeltonCombo />} />
+            <Route path="/projects/solar-installation-craigieburn" element={<ProjectCraigiburnSolar />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
