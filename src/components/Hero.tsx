@@ -20,17 +20,18 @@ export const Hero = () => {
   return (
     <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden">
 
-      {/* Hero background — sunset over solar panels */}
+      {/* Hero background — suburban home with solar panels */}
       <div className="absolute inset-0">
         <img
           src="/hero-bg.jpg"
           alt=""
           aria-hidden="true"
           className="w-full h-full object-cover object-center"
+          style={{ objectPosition: "50% 40%" }}
         />
-        {/* Gradient overlay — very light on right (behind form), soft on left (behind text) */}
+        {/* Strong left overlay for text readability, opens up on the right */}
         <div className="absolute inset-0" style={{
-          background: "linear-gradient(105deg, rgba(255,252,248,0.96) 0%, rgba(255,250,245,0.92) 38%, rgba(255,248,240,0.82) 55%, rgba(254,244,234,0.65) 75%, rgba(254,240,228,0.45) 100%)"
+          background: "linear-gradient(105deg, rgba(248,252,255,0.97) 0%, rgba(240,248,252,0.94) 35%, rgba(230,243,250,0.80) 55%, rgba(220,238,248,0.55) 75%, rgba(210,233,245,0.30) 100%)"
         }} />
       </div>
 
@@ -65,7 +66,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-lg text-[#3a4f6a] mb-10 max-w-lg leading-relaxed font-medium"
+              className="text-lg text-[#2d4a6a] mb-10 max-w-lg leading-relaxed font-medium"
             >
               Join Melbourne homeowners making the switch to solar. Get a free quote, expert advice, and a system tailored to your energy needs.
             </motion.p>
