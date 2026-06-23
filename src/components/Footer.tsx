@@ -138,7 +138,7 @@ export const Footer = () => {
             © 2025 ADSA Australian Solar. All rights reserved. CEC Accredited Installer.
           </p>
           <div className="flex gap-6 text-sm text-white/60">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
             <Link to="/refund" className="hover:text-primary transition-colors">Refund Policy</Link>
           </div>

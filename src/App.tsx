@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import Refund from "./pages/Refund";
 import NotFound from "./pages/NotFound";
 import OffersPage from "./pages/Offers";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import { WerribeeSolar, TarneitSolar, PointCookSolar, CraigiburnSolar, ClydeNorthSolar, TruginanaSolar, MeltonSolar, HoppersCrossingSolar, WyndhamValeSolar, DonnybrookSolar, PakenhamSolar, OfficerSolar } from "./pages/SuburbPages";
 import { BlogIndex } from "./pages/BlogIndex";
 import { BlogRebates, BlogBattery, BlogCost, BlogFiT, BlogEV, BlogSystemSize, BlogLifespan } from "./pages/BlogPosts";
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/refund" element={<Refund />} />
             <Route path="/offers" element={<OffersPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             {/* Suburb SEO pages */}
             <Route path="/solar-panels-werribee" element={<WerribeeSolar />} />
             <Route path="/solar-panels-tarneit" element={<TarneitSolar />} />
