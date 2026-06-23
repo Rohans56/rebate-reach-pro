@@ -75,6 +75,13 @@ export const ContactForm = () => {
         title: "Quote Request Received!",
         description: "We'll contact you within 24 hours with your free quote.",
       });
+
+      // Google Ads conversion tracking
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag('event', 'conversion', {
+          'send_to': 'AW-18081553067/YfhRCPig3qEcEKu1-q1D'
+        });
+      }
       
       setFormData({ name: "", email: "", phone: "", streetAddress: "", suburb: "", postcode: "", message: "" });
     } catch (error) {
