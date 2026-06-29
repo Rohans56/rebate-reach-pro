@@ -139,6 +139,97 @@ const OffersPage = () => {
         </div>
       </section>
 
+      {/* OFFER BANNER 2 — EOFY Sale Reminder */}
+      <section className="py-16" style={{ background: "#f8fffe" }}>
+        <div className="container mx-auto px-6 max-w-5xl">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+
+            {/* Banner image — full width, high quality */}
+            <div className="rounded-3xl overflow-hidden shadow-2xl shadow-[#1e3a5f]/15 mb-12">
+              <img
+                src="/eofy-offer-2.png"
+                alt="ADSA Australian Solar EOFY Sale Reminder — Ends June 30. 6.6kW Solar + Battery Packages from $6,990. CEC Accredited, Solar Victoria, NETC Approved."
+                className="w-full h-auto block"
+              />
+            </div>
+
+            {/* What's included breakdown */}
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="h-px w-10 bg-[#f26b3a]" />
+                  <span className="text-xs font-bold text-[#f26b3a] uppercase tracking-widest">What's included</span>
+                </div>
+                <h2 className="text-3xl font-extrabold text-[#1e3a5f] mb-6">6.6kW Solar + Battery Packages — From $6,990</h2>
+                <div className="space-y-3 mb-8">
+                  {[
+                    "6.6kW high-efficiency solar panel system",
+                    "Battery storage included",
+                    "CEC accredited installation by licensed electricians",
+                    "Grid connection application handled by ADSA",
+                    "Government rebates applied at point of sale",
+                    "25-year panel performance warranty",
+                    "10-year installation workmanship warranty",
+                    "Wi-Fi monitoring setup included",
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-[#2eb87a] flex-shrink-0 mt-0.5" />
+                      <span className="text-[#3a5070]">{item}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm text-gray-400 italic">*T&Cs Apply. Price may vary depending on system size and site requirements. Picture is for illustration purposes only.</p>
+              </div>
+
+              {/* CTA panel */}
+              <div className="sticky top-28">
+                <div className="rounded-2xl p-8" style={{ background: "linear-gradient(135deg, #1e3a5f, #2a4f80)" }}>
+                  <div className="text-white/60 text-sm font-semibold uppercase tracking-wider mb-2">EOFY Sale Reminder — Ends June 30</div>
+                  <div className="text-5xl font-black text-[#f26b3a] mb-1">From $6,990</div>
+                  <div className="text-white/50 text-sm mb-8">*T&Cs Apply</div>
+
+                  <div className="space-y-3 mb-8">
+                    {[
+                      { label: "System Size", value: "6.6 kW Solar" },
+                      { label: "Battery Storage", value: "Included" },
+                      { label: "Accreditation", value: "CEC Accredited" },
+                      { label: "Offer Ends", value: "June 30" },
+                    ].map(({ label, value }) => (
+                      <div key={label} className="flex justify-between border-b border-white/10 pb-2">
+                        <span className="text-white/50 text-sm">{label}</span>
+                        <span className="text-white font-semibold text-sm">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link
+                    to="/contact"
+                    className="flex items-center justify-center gap-2 bg-[#f26b3a] hover:bg-[#e05a2a] text-white font-bold py-4 rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#f26b3a]/30 mb-3 group"
+                  >
+                    Claim This Offer <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <a
+                    href="tel:0469312118"
+                    className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-4 rounded-xl transition-colors border border-white/20"
+                  >
+                    <Phone className="w-4 h-4" /> 0469 312 118
+                  </a>
+
+                  <div className="mt-6 grid grid-cols-2 gap-2">
+                    {["CEC Accredited", "Solar Victoria", "NETC Approved", "Fully Licensed"].map(b => (
+                      <div key={b} className="flex items-center gap-1.5 text-xs text-white/50">
+                        <CheckCircle className="w-3.5 h-3.5 text-[#2eb87a] flex-shrink-0" /> {b}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Bottom CTA strip */}
       <section className="py-16" style={{ background: "#1e3a5f" }}>
         <div className="container mx-auto px-6 max-w-4xl flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
