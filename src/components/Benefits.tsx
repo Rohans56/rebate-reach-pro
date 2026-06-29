@@ -38,9 +38,9 @@ const services = [
     number: "03",
     title: "Solar + Battery Packages",
     sub: "The complete energy solution",
-    body: "Our most popular option. Install both together for maximum savings, a single installation day, and the full combined government rebate — up to $18,500.",
-    stat: "$18,500",
-    statLabel: "Max combined rebate",
+    body: "Our most popular option. Install both together for maximum savings, a single installation day, and assistance claiming available government rebates.",
+    stat: "$2,800",
+    statLabel: "Max solar rebate available",
     color: "#1e3a5f",
   },
 ];
@@ -167,7 +167,7 @@ export const Benefits = () => {
               </div>
               <h3 className="text-3xl md:text-4xl font-extrabold text-[#1e3a5f] mb-5">Solar + Battery Packages</h3>
               <p className="text-[#3a5070] text-lg leading-relaxed mb-8">
-                Our most popular option. Install both together for maximum savings, a single installation day, and the full combined government rebate — up to $18,500.
+                Our most popular option. Install both together for maximum savings, a single installation day, and assistance claiming available government rebates.
               </p>
               <Link to="/contact" className="inline-flex items-center gap-2 font-bold text-[#1e3a5f] text-sm group hover:gap-3 transition-all">
                 Get a quote <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -176,8 +176,8 @@ export const Benefits = () => {
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" custom={1} viewport={{ once: true }} className="flex items-center justify-center">
               <div className="relative w-64 h-64 rounded-full flex flex-col items-center justify-center" style={{ background: "radial-gradient(circle, rgba(30,58,95,0.10) 0%, rgba(30,58,95,0.03) 70%)", border: "1.5px solid rgba(30,58,95,0.20)" }}>
                 <Zap className="w-12 h-12 text-[#1e3a5f] mb-3" />
-                <div className="text-4xl font-black text-[#1e3a5f]">$18,500</div>
-                <div className="text-sm font-semibold text-[#1e3a5f] mt-2 text-center px-6">Max combined rebate</div>
+                <div className="text-4xl font-black text-[#1e3a5f]">$2,800</div>
+                <div className="text-sm font-semibold text-[#1e3a5f] mt-2 text-center px-6">Max solar rebate available</div>
                 <motion.div animate={{ y: [-8, 8, -8] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-[#1e3a5f]/20" />
                 <motion.div animate={{ y: [6, -6, 6] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} className="absolute -bottom-3 -left-3 w-5 h-5 rounded-full bg-[#1e3a5f]/15" />
               </div>

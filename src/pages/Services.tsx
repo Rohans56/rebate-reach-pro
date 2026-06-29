@@ -12,7 +12,7 @@ const Services = () => {
         <title>Solar & Battery Services | ADSA Solar Melbourne</title>
         <meta 
           name="description" 
-          content="Explore our solar panel and battery storage solutions. Calculate your savings with our interactive tools. Government rebates up to $18,500 available." 
+          content="Explore our solar panel and battery storage solutions. Calculate your savings with our interactive tools. Government rebates up to $2,800 available." 
         />
         <link rel="canonical" href="https://adsasolar.com.au/services" />
       </Helmet>

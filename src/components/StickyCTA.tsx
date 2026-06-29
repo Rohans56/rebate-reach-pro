@@ -32,7 +32,7 @@ export const StickyCTA = () => {
             <div className="flex items-center justify-between gap-4">
               <div className="hidden md:block">
                 <p className="text-sm text-muted-foreground">Ready to start saving?</p>
-                <p className="font-semibold text-foreground">Get up to $18,500 in government rebates</p>
+                <p className="font-semibold text-foreground">Get $2,800 in government rebates</p>
               </div>
               <div className="flex items-center gap-3 w-full md:w-auto">
                 <Button variant="hero" size="lg" className="flex-1 md:flex-none" asChild>

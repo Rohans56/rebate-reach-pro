@@ -44,7 +44,7 @@ export const SuburbPage = ({ data }: { data: SuburbData }) => {
         <title>Solar Panels {data.suburb} | ADSA Australian Solar | Local Installer</title>
         <meta
           name="description"
-          content={`Looking for solar panels in ${data.suburb}? ADSA Australian Solar installs solar panels and battery systems across ${data.suburb}, ${data.region}. Government rebates up to $18,500. Free quote today.`}
+          content={`Looking for solar panels in ${data.suburb}? ADSA Australian Solar installs solar panels and battery systems across ${data.suburb}, ${data.region}. Government rebates up to $2,800. Free quote today.`}
         />
         <meta name="keywords" content={`solar panels ${data.suburb}, solar installation ${data.suburb}, solar installer ${data.suburb}, battery installation ${data.suburb}, solar rebates ${data.suburb}, solar ${data.suburb} ${data.postcode}`} />
         <link rel="canonical" href={`https://adsaaustraliansolar.com.au/solar-panels-${data.slug}`} />
@@ -145,7 +145,7 @@ export const SuburbPage = ({ data }: { data: SuburbData }) => {
               At ADSA Australian Solar, we've completed installations across {data.suburb} and the wider {data.region} corridor. We understand the local roof types, energy usage patterns, and grid connection requirements in the area — which means a faster, smoother installation and a system sized exactly for your needs.
             </p>
             <p>
-              Right now, Victorian homeowners in {data.suburb} can access government rebates of up to <strong className="text-[#f26b3a]">$18,500</strong> — combining the federal STC solar rebate and the Cheaper Home Batteries Program. These rebates reduce every year, so acting now means locking in the maximum savings.
+              Right now, Victorian homeowners in {data.suburb} can access government rebates of up to <strong className="text-[#f26b3a]">$2,800</strong> — combining the federal STC solar rebate and the Cheaper Home Batteries Program. These rebates reduce every year, so acting now means locking in the maximum savings.
             </p>
             {data.projectExample && (
               <div className="bg-[#e8f8f1] border border-[#2eb87a]/30 rounded-2xl p-6 not-prose">

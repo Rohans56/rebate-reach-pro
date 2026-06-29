@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "What solar rebates are available in Victoria in 2025?",
-    answer: "In 2025, Victorians can access multiple rebates: The STC (Small-scale Technology Certificate) rebate provides $1,500-$3,500 off solar panels depending on system size. The Cheaper Home Batteries Program offers approximately $300-$370 per kWh for battery storage (e.g., ~$3,400 for a 10kWh battery, up to $5,000 for 13.5kWh). The maximum combined rebate can reach up to $18,500 per household.",
+    answer: "In 2025, Victorians can access multiple rebates: The STC (Small-scale Technology Certificate) rebate provides up to $2,800 off solar panels depending on system size. The Cheaper Home Batteries Program offers approximately $300-$370 per kWh for battery storage (e.g., ~$3,400 for a 10kWh battery, up to $5,000 for 13.5kWh). Combined, eligible households can access significant savings across both programs.",
   },
   {
     question: "How does the battery rebate work?",

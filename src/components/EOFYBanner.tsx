@@ -44,7 +44,7 @@ export const EOFYBanner = () => {
               <p className="mt-1 text-white/85 text-sm md:text-base max-w-xl">
                 Lock in the biggest solar + battery rebates of the year before{" "}
                 <strong className="text-white">June 30</strong>. Government rebates
-                up to <strong className="text-yellow-300">$18,500</strong> — don't
+                up to <strong className="text-yellow-300">$2,800</strong> — don't
                 miss out.
               </p>
             </div>

@@ -88,7 +88,7 @@ export const BatterySystems = () => {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Up to</p>
-                <p className="text-2xl font-bold text-foreground">$18,500 Rebate</p>
+                <p className="text-2xl font-bold text-foreground">$5,000 Battery Rebate</p>
               </div>
             </div>
           </motion.div>

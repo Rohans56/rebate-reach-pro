@@ -87,7 +87,7 @@ export const BatteryCalculator = () => {
     const dailySavings = dailySelfConsumptionSavings - dailyExportReduction;
     const annualSavings = Math.round(dailySavings * 365);
     
-    // Battery rebate (Victorian Home Battery Rebate ~$2,950 up to max $18,500 based on capacity)
+    // Battery rebate (Victorian Home Battery Rebate ~$2,950 up to max $2,800 based on capacity)
     const rebatePerKwh = 340;
     const maxRebate = 4000; // Simplified rebate cap
     const batteryRebate = Math.min(battery.capacity * rebatePerKwh, maxRebate);

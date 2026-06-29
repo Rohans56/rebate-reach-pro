@@ -253,7 +253,7 @@ export const ResidentialSolarPage = () => <ServicePage data={{
   slug: "residential-solar",
   title: "Residential Solar",
   metaTitle: "Residential Solar Melbourne | Home Solar Panels | ADSA Australian Solar",
-  metaDesc: "Residential solar panel and battery installation for Melbourne homes. Tailored systems, government rebates up to $18,500, CEC accredited installers. Free home assessment.",
+  metaDesc: "Residential solar panel and battery installation for Melbourne homes. Tailored systems, government rebates up to $2,800, CEC accredited installers. Free home assessment.",
   keywords: "residential solar Melbourne, home solar panels Melbourne, residential solar installer Melbourne, home solar installation Victoria, solar panels for homes Melbourne",
   heroHeading: "Residential Solar|for Melbourne Homes",
   heroSub: "Tailored solar and battery systems designed for your home, your roof, and your energy usage. CEC accredited installation with full government rebate assistance.",
@@ -302,7 +302,7 @@ export const SolarRebatesVictoriaPage = () => <ServicePage data={{
   metaDesc: "Complete guide to solar rebates available in Victoria 2025. STC federal rebate, Cheaper Home Batteries Program, and more. ADSA handles all paperwork. Free quote today.",
   keywords: "solar rebates Victoria 2025, solar panel rebate Victoria, battery rebate Victoria, cheaper home batteries program, STC rebate Melbourne, Victorian solar rebate 2025",
   heroHeading: "Solar Rebates|Victoria 2025",
-  heroSub: "Victorian homeowners can access up to $18,500 in combined government rebates in 2025. ADSA handles all rebate paperwork — you simply pay the reduced price.",
+  heroSub: "Victorian homeowners can access up to $2,800 in combined government rebates in 2025. ADSA handles all rebate paperwork — you simply pay the reduced price.",
   intro: "The combination of federal solar and battery rebates available to Victorian homeowners in 2025 represents some of the strongest government support for home energy ever offered in Australia. Understanding what you're entitled to — and ensuring you claim every dollar — is something ADSA manages on your behalf as part of every installation.",
   sections: [
     { heading: "Federal STC Solar Rebate", body: "The Small-scale Technology Certificate (STC) rebate is the primary federal incentive for solar panels. For a 6.6kW system in Melbourne, this currently equates to approximately $2,800–$3,200 off your installation cost. It's applied as an upfront discount — you never see a separate cheque or lodge a claim. Your installer creates and sells the STCs, passing the value to you. The rebate reduces slightly each January 1." },

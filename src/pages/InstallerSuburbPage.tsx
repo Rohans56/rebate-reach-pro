@@ -58,7 +58,7 @@ export const InstallerSuburbPage = ({ data }: { data: InstallerSuburbData }) => 
     <>
       <Helmet>
         <title>Solar Installers {data.suburb} | CEC Accredited | ADSA Australian Solar</title>
-        <meta name="description" content={`Looking for trusted solar installers in ${data.suburb}? ADSA Australian Solar installs solar panels, batteries and EV chargers across ${data.suburb}. CEC accredited, government rebates up to $18,500. Free quote.`} />
+        <meta name="description" content={`Looking for trusted solar installers in ${data.suburb}? ADSA Australian Solar installs solar panels, batteries and EV chargers across ${data.suburb}. CEC accredited, government rebates up to $2,800. Free quote.`} />
         <meta name="keywords" content={`solar installers ${data.suburb}, solar installation ${data.suburb}, solar company ${data.suburb}, battery installer ${data.suburb}, solar panels ${data.suburb} ${data.postcode}, EV charger ${data.suburb}`} />
         <link rel="canonical" href={`https://adsaaustraliansolar.com.au/solar-installers-${data.slug}`} />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
@@ -139,7 +139,7 @@ export const InstallerSuburbPage = ({ data }: { data: InstallerSuburbData }) => 
               {[
                 { val: "500+", label: "Installations completed" },
                 { val: "4.9★", label: "Customer rating" },
-                { val: "$18,500", label: "Max rebate available" },
+                { val: "$2,800", label: "Max rebate available" },
                 { val: "1 Day", label: "Typical install time" },
               ].map(({ val, label }) => (
                 <div key={label} className="text-center py-8 px-4 rounded-2xl" style={{ background: "linear-gradient(135deg, #f8fffe, #eef8f5)" }}>

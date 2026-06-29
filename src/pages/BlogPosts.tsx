@@ -5,14 +5,14 @@ import { BlogTemplate, BlogPost } from "./BlogTemplate";
 const rebatesPost: BlogPost = {
   slug: "solar-rebates-victoria-2025",
   title: "Solar Rebates Victoria 2025 — The Complete Guide",
-  metaTitle: "Solar Rebates Victoria 2025 | Up to $18,500 | ADSA Australian Solar",
+  metaTitle: "Solar Rebates Victoria 2025 | Up to $2,800 | ADSA Australian Solar",
   metaDescription: "Complete guide to solar rebates available in Victoria in 2025. STC federal rebates, Cheaper Home Batteries Program, and more. Find out what you qualify for.",
   keywords: "solar rebates victoria 2025, solar panel rebate victoria, battery rebate victoria, cheaper home batteries program, STC rebate melbourne",
   category: "Rebates & Savings",
   readTime: "8 min",
   date: "June 2025",
   author: "ADSA Australian Solar",
-  excerpt: "Victorian homeowners can access up to $18,500 in government rebates in 2025. Here's exactly what's available, who qualifies, and how to claim it.",
+  excerpt: "Victorian homeowners can access up to $2,800 in government rebates in 2025. Here's exactly what's available, who qualifies, and how to claim it.",
   relatedPosts: [
     { slug: "is-solar-battery-worth-it-victoria", title: "Is a Home Battery Worth It in Victoria?" },
     { slug: "how-much-do-solar-panels-cost-melbourne", title: "How Much Do Solar Panels Cost in Melbourne?" },
@@ -20,7 +20,7 @@ const rebatesPost: BlogPost = {
   ],
   content: (
     <div>
-      <p>If you're thinking about going solar in Victoria in 2025, the financial case has never been stronger. Between federal government rebates on solar panels and a newer program covering battery systems, eligible Victorian homeowners can receive up to <strong>$18,500 in government support</strong> — before a single panel is installed.</p>
+      <p>If you're thinking about going solar in Victoria in 2025, the financial case has never been stronger. The federal government's STC rebate on solar panels can reduce your upfront cost by up to <strong>$2,800</strong> — applied directly at the point of sale, before a single panel is installed.</p>
       <p>But these rebates are not permanent. They decrease every financial year, and the window to claim the maximum amount is right now. This guide breaks down every rebate available, who qualifies, and exactly how much you can expect to save.</p>
 
       <h2>1. The Federal STC Rebate (Solar Panels)</h2>

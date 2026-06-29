@@ -128,7 +128,7 @@ export const LeadPopup = () => {
                         Find Out How Much You Could Save
                       </h2>
                       <p className="text-muted-foreground text-sm leading-relaxed">
-                        Get a <span className="font-semibold text-primary">free personalised quote</span> — most Victorian homeowners save $1,000–$2,300/year with government rebates up to $18,500.
+                        Get a <span className="font-semibold text-primary">free personalised quote</span> — most Victorian homeowners save $1,000–$2,300/year with government rebates up to $2,800.
                       </p>
                     </div>
 

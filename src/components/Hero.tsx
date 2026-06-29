@@ -8,7 +8,7 @@ const stats = [
   { value: "500+", label: "Installations" },
   { value: "$2,300", label: "Avg. Annual Saving" },
   { value: "4.9★", label: "Customer Rating" },
-  { value: "$18,500", label: "Max Rebate Available" },
+  { value: "$2,800", label: "Max Solar Rebate Available" },
 ];
 
 export const Hero = () => {

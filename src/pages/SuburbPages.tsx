@@ -5,7 +5,7 @@ export const WerribeeSolar = () => <SuburbPage data={{
   slug: "werribee",
   region: "Melbourne's Western Suburbs",
   postcode: "3030",
-  blurb: "ADSA Australian Solar is Werribee's trusted local solar installer. We've helped dozens of Werribee families slash their power bills with quality solar panels and battery systems — backed by government rebates up to $18,500.",
+  blurb: "ADSA Australian Solar is Werribee's trusted local solar installer. We've helped dozens of Werribee families slash their power bills with quality solar panels and battery systems — backed by government rebates up to $2,800.",
   nearbySuburbs: ["Tarneit", "Point Cook", "Hoppers Crossing", "Truganina", "Melton"],
   projectExample: { type: "6.6kW Solar + 10kWh Battery", size: "6.6kW", saving: "$1,900" }
 }} />;
@@ -45,7 +45,7 @@ export const ClydeNorthSolar = () => <SuburbPage data={{
   slug: "clyde-north",
   region: "Melbourne's South-Eastern Growth Corridor",
   postcode: "3978",
-  blurb: "Clyde North is experiencing rapid residential growth and solar is the smart choice for new homeowners. ADSA Australian Solar installs premium solar and battery systems across Clyde North with government rebates up to $18,500.",
+  blurb: "Clyde North is experiencing rapid residential growth and solar is the smart choice for new homeowners. ADSA Australian Solar installs premium solar and battery systems across Clyde North with government rebates up to $2,800.",
   nearbySuburbs: ["Cranbourne", "Berwick", "Officer", "Pakenham", "Clyde"],
   projectExample: { type: "6.6kW Solar + Battery", size: "6.6kW", saving: "$1,800" }
 }} />;
@@ -85,7 +85,7 @@ export const WyndhamValeSolar = () => <SuburbPage data={{
   slug: "wyndham-vale",
   region: "Melbourne's Western Growth Corridor",
   postcode: "3024",
-  blurb: "Wyndham Vale is one of Victoria's fastest-growing communities and solar demand is booming. ADSA Australian Solar provides professional solar panel and battery installations across Wyndham Vale, with government rebates up to $18,500 available right now.",
+  blurb: "Wyndham Vale is one of Victoria's fastest-growing communities and solar demand is booming. ADSA Australian Solar provides professional solar panel and battery installations across Wyndham Vale, with government rebates up to $2,800 available right now.",
   nearbySuburbs: ["Tarneit", "Hoppers Crossing", "Werribee", "Manor Lakes", "Truganina"],
   projectExample: { type: "6.6kW Rooftop Solar", size: "6.6kW", saving: "$1,700" }
 }} />;
@@ -105,7 +105,7 @@ export const PakenhamSolar = () => <SuburbPage data={{
   slug: "pakenham",
   region: "Melbourne's South-Eastern Growth Corridor",
   postcode: "3810",
-  blurb: "Pakenham homeowners are increasingly turning to solar to combat rising electricity costs. ADSA Australian Solar delivers expert solar panel and battery installations across Pakenham, backed by government rebates up to $18,500 and a 25-year panel warranty.",
+  blurb: "Pakenham homeowners are increasingly turning to solar to combat rising electricity costs. ADSA Australian Solar delivers expert solar panel and battery installations across Pakenham, backed by government rebates up to $2,800 and a 25-year panel warranty.",
   nearbySuburbs: ["Officer", "Clyde North", "Berwick", "Beaconsfield", "Drouin"],
   projectExample: { type: "6.6kW Solar + Battery", size: "6.6kW", saving: "$1,750" }
 }} />;
