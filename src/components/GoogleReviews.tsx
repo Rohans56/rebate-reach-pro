@@ -1,8 +1,43 @@
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Star } from "lucide-react";
 
 const REVIEW_LINK = "https://g.page/r/CcHW44-7VcIfEBM/review";
 const GOOGLE_PROFILE = "https://www.google.com/maps/place/?q=place_id:ChIJjW4X_KlP1moRwdbjj7tVwh8";
+
+const reviews = [
+  {
+    author: "Sarah M.",
+    location: "Point Cook, VIC",
+    rating: 5,
+    text: "ADSA installed our solar system professionally and on time. Bills dropped from $650 to $180 per quarter. The team handled everything including the rebate paperwork. Couldn't be happier.",
+    initials: "SM",
+    color: "#f26b3a",
+  },
+  {
+    author: "Michael P.",
+    location: "Werribee, VIC",
+    rating: 5,
+    text: "The whole process was seamless. ADSA helped us with all the rebate paperwork and we got a great price on our solar and battery system. Best investment we've made for our home.",
+    initials: "MP",
+    color: "#2eb87a",
+  },
+  {
+    author: "James & Lisa T.",
+    location: "Tarneit, VIC",
+    rating: 5,
+    text: "We were skeptical about the savings claims but our first bill proved everything. Amazing installation quality and after-sales support is excellent. Highly recommend ADSA.",
+    initials: "JT",
+    color: "#1e3a5f",
+  },
+  {
+    author: "Priya K.",
+    location: "Craigieburn, VIC",
+    rating: 5,
+    text: "Great local team, excellent communication and a spotless installation. They explained everything clearly and finished in one day. Our power bills have dropped dramatically.",
+    initials: "PK",
+    color: "#f26b3a",
+  },
+];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -11,6 +46,14 @@ const fadeUp = {
     transition: { duration: 0.6, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }
   })
 };
+
+const StarRating = ({ rating }: { rating: number }) => (
+  <div className="flex gap-0.5">
+    {[...Array(5)].map((_, i) => (
+      <Star key={i} className={`w-4 h-4 ${i < rating ? "fill-[#f97316] text-[#f97316]" : "fill-gray-200 text-gray-200"}`} />
+    ))}
+  </div>
+);
 
 export const GoogleReviews = () => (
   <section className="py-20 bg-white">
@@ -40,10 +83,32 @@ export const GoogleReviews = () => (
         </a>
       </motion.div>
 
-      {/* Elfsight live widget */}
-      <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mb-10">
-        <div className="elfsight-app-1e8fcde0-68ae-4fdf-8e52-ddc41948cd44" data-elfsight-app-lazy></div>
-      </motion.div>
+      {/* Review cards */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+        {reviews.map((r, i) => (
+          <motion.div
+            key={r.author}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            custom={i}
+            viewport={{ once: true }}
+            className="bg-gray-50 rounded-2xl p-5 flex flex-col gap-4 hover:shadow-md transition-shadow"
+          >
+            <StarRating rating={r.rating} />
+            <p className="text-gray-600 text-sm leading-relaxed flex-1">"{r.text}"</p>
+            <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
+              <div className="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0" style={{ background: r.color }}>
+                {r.initials}
+              </div>
+              <div>
+                <div className="font-bold text-[#1e3a5f] text-sm">{r.author}</div>
+                <div className="text-xs text-gray-400">{r.location}</div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
 
       {/* Leave a review CTA */}
       <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
